@@ -12,4 +12,5 @@ with open('wall.STEP','r') as wall:
 
 
 typ=set(typ)
-print(typ)
+for i in typ:
+    print(i)
