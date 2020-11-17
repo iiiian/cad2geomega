@@ -1,0 +1,49 @@
+// A spheric geometry for testing simulations
+// Don't change anything because it used for several cosima examples!!
+
+Name Spheric
+Version 1.0
+
+SurroundingSphere 10  0.0  0.0  0.0  10.0
+
+
+Include Materials.geo
+Include wall.geo
+
+Trigger TN01
+TN01.Veto false
+TN01.TriggerByDetector true
+TN01.Detector GScinti 1
+
+wall.Mother WorldVolume
+wall.Position 10 10 10
+wall.Visibility 1
+wall.Color 1
+
+Volume WorldVolume             
+WorldVolume.Material Vacuum
+WorldVolume.Visibility 0   
+WorldVolume.Shape BRIK 50. 50. 50.
+WorldVolume.Mother 0
+
+
+Volume BOX
+BOX.Material GAGG
+BOX.Visibility 1
+BOX.Color 6
+BOX.Shape BRIK 2.5 2.5 0.6
+BOX.Position 0.0 0.0 0.0
+BOX.Mother WorldVolume
+
+
+//------------------------------------------------------------
+// Detector information:
+
+
+Scintillator                  GScinti
+
+GScinti.DetectorVolume      BOX
+GScinti.SensitiveVolume     BOX
+GScinti.NoiseThreshold          0
+GScinti.TriggerThreshold        0
+GScinti.EnergyResolution  ideal

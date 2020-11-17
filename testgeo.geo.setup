@@ -1,0 +1,17 @@
+// A spheric geometry for testing simulations
+// Don't change anything because it used for several cosima examples!!
+
+Name Spheric
+Version 1.0
+
+SurroundingSphere 10  0.0  0.0  0.0  10.0
+
+
+Include Materials.geo
+Include wall.geo
+
+Volume WorldVolume             
+WorldVolume.Material Vacuum
+WorldVolume.Visibility 0   
+WorldVolume.Shape BRIK 50. 50. 50.
+WorldVolume.Mother 0
