@@ -1,4 +1,4 @@
 from write_geo import write_all
 import numpy as np 
 
-write_all('./shape/wall.txt','./wall.geo','wall',"WorldVolume","Aluminium",["Materials.geo"])
+write_all('./shape/basebeamupper.txt','./basebeamupper.geo','basebeamupper',"WorldVolume","Aluminium",["Materials.geo"])

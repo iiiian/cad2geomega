@@ -67,7 +67,7 @@ def write_ptri(line,shape_name,geofile):
         sub2_name=shape_name+'_sub2'
         geo.write('Shape BOX '+sub2_name)
         geo.write('\n')
-        geo.write(sub2_name+'.Parameters '+str((di(a,b)+1)/2)+' '+str(di(c,d)/2)+' '+str(di(c,a)/2))
+        geo.write(sub2_name+'.Parameters '+str((di(a,b)+1)/2)+' '+str(di(d,c)/2)+' '+str(di(c,a)/2))
         geo.write('\n')
         geo.write('\n')
         #write orientation
@@ -87,17 +87,21 @@ def write_ptri(line,shape_name,geofile):
         bo=float(p[0][0])
         mid=0.5*(a+d)-0.5*nor(b-a)
         z=np.array([0,0,1])
+        x=np.array([1,0,0])
+        y=np.array([0,1,0])
+        x_prime=nor(b-a)
+        y_prime=nor(c-a)
         z_prime=nor(d-c)
-        theta=r2d(np.arccos(np.dot(z,z_prime)))
-        xy_norm=(z_prime[0]**2+z_prime[1]**2)**0.5
-        if xy_norm==0:
-            xy_norm=1
-        phi=r2d(np.arccos(z_prime[0]/xy_norm))
-        if z_prime[1] >= 0:
-            phi=phi
-        else:
-            phi=-phi
-        orientation=[0,0,0,0,theta,phi]
+        theta_z=r2d(np.arccos(np.dot(z,z_prime)))
+        theta_x=r2d(np.arccos(np.dot(x,x_prime)))+90
+        theta_y=r2d(np.arccos(np.dot(y,y_prime)))
+        print('---------------------------------')
+        print('x = '+str(theta_x))
+        print('y = '+str(theta_y))
+        print('z = '+str(theta_z))
+        print('---------------------------------')
+        #orientation=[theta_x,theta_z,theta_y]
+        orientation=[180,0,theta_x]
         ans=[bo,mid,orientation]
         return ans
 
@@ -132,7 +136,7 @@ def write_ztbox(line,shape_name,geofile):
         phi=phi
     else:
         phi=-phi
-    orientation=[0,0,0,0,theta,phi]
+    orientation=[0,theta,phi]
     ans=[bo,mid,orientation]
     return ans
 
@@ -156,7 +160,6 @@ def write_cyl(line,shape_name,geofile):
     z=np.array([0,0,1])
     z_prime=nor(c-b)
     theta=r2d(np.arccos(np.dot(z,z_prime)))
-    print(theta)
     xy_norm=(z_prime[0]**2+z_prime[1]**2)**0.5
     if xy_norm==0:
         xy_norm=1
@@ -165,6 +168,6 @@ def write_cyl(line,shape_name,geofile):
         phi=phi
     else:
         phi=-phi
-    orientation=[0,0,0,0,theta,phi]
+    orientation=[0,theta,phi]
     ans=[bo,mid,orientation]
     return ans

@@ -1,10 +1,30 @@
 Shape Box basebeamupper_subshape1
 basebeamupper_subshape1.Parameters 31.0 3.0 3.5
 
+Shape TUBE basebeamupper_subshape2
+basebeamupper_subshape2.Parameters 0 1.5 1.5 0 360
+
+Shape TUBE basebeamupper_subshape3
+basebeamupper_subshape3.Parameters 0 1.5 1.5 0 360
+
 Include Materials.geo
+
+Orientation basebeamupper_subshape1_to_basebeamupper_subshape2
+basebeamupper_subshape1_to_basebeamupper_subshape2.Rotation 0 90.0 180.0
+basebeamupper_subshape1_to_basebeamupper_subshape2.Position 29.5 0.0 0.0
+
+Shape Subtraction basebeamupper_subshape4
+basebeamupper_subshape4.Parameters basebeamupper_subshape1 basebeamupper_subshape2 basebeamupper_subshape1_to_basebeamupper_subshape2
+
+Orientation basebeamupper_subshape1_to_basebeamupper_subshape3
+basebeamupper_subshape1_to_basebeamupper_subshape3.Rotation 0 90.0 0.0
+basebeamupper_subshape1_to_basebeamupper_subshape3.Position -29.5 0.0 0.0
+
+Shape Subtraction basebeamupper_subshape5
+basebeamupper_subshape5.Parameters basebeamupper_subshape4 basebeamupper_subshape3 basebeamupper_subshape1_to_basebeamupper_subshape3
 
 Volume basebeamupper
 basebeamupper.Mother WorldVolume
 basebeamupper.Material Aluminium
-basebeamupper.Shape basebeamupper_subshape1
+basebeamupper.Shape basebeamupper_subshape5
 basebeamupper.Position 0.0 0.0 0.0

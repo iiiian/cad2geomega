@@ -1,11 +1,11 @@
 Shape Box frameupper_subshape1
-frameupper_subshape1.Parameters 11.6326395 3.0 2.0
+frameupper_subshape1.Parameters 12.232233005000001 3.0 2.0
 
 Shape TRD1 frameupper_subshape2_sub1
-frameupper_subshape2_sub1.Parameters 4.5 0.5 3.0 2.3753803732194134
+frameupper_subshape2_sub1.Parameters 4.5 0.5 3.0 2.113077706938494
 
 Shape BOX frameupper_subshape2_sub2
-frameupper_subshape2_sub2.Parameters 2.5 3.0 2.3753803732194134
+frameupper_subshape2_sub2.Parameters 2.5 3.0 2.113077706938494
 
 Orientation frameupper_subshape2_sub1_to_frameupper_subshape2_sub2
 frameupper_subshape2_sub1_to_frameupper_subshape2_sub2.Position -2.0 0 0
@@ -17,13 +17,13 @@ Shape Box frameupper_subshape3
 frameupper_subshape3.Parameters 2.3753803732194134 3.0 5.533824435920089
 
 Shape Box frameupper_subshape4
-frameupper_subshape4.Parameters 11.6326395 3.0 2.0
+frameupper_subshape4.Parameters 12.232233005000001 3.0 2.0
 
 Shape TRD1 frameupper_subshape5_sub1
-frameupper_subshape5_sub1.Parameters 4.5 0.5 3.0 2.3753803732194134
+frameupper_subshape5_sub1.Parameters 4.5 0.5 3.0 2.113077706938494
 
 Shape BOX frameupper_subshape5_sub2
-frameupper_subshape5_sub2.Parameters 2.5 3.0 2.3753803732194134
+frameupper_subshape5_sub2.Parameters 2.5 3.0 2.113077706938494
 
 Orientation frameupper_subshape5_sub1_to_frameupper_subshape5_sub2
 frameupper_subshape5_sub1_to_frameupper_subshape5_sub2.Position -2.0 0 0
@@ -38,35 +38,35 @@ Include Materials.geo
 
 Orientation frameupper_subshape1_to_frameupper_subshape2
 frameupper_subshape1_to_frameupper_subshape2.Position -12.914213499999999 0.0 -0.5
-frameupper_subshape1_to_frameupper_subshape2.Rotation 0 0 0 0 90.0 90.0 
+frameupper_subshape1_to_frameupper_subshape2.Rotation 180 0 180.0
 
 Shape Union frameupper_subshape7
 frameupper_subshape7.Parameters frameupper_subshape1 frameupper_subshape2 frameupper_subshape1_to_frameupper_subshape2
 
 Orientation frameupper_subshape1_to_frameupper_subshape3
-frameupper_subshape1_to_frameupper_subshape3.Position -16.823223300000002 -0.25 -3.9090095
-frameupper_subshape1_to_frameupper_subshape3.Rotation 0 0 0 0 134.9415292722403 -176.3406427602337 
+frameupper_subshape1_to_frameupper_subshape3.Position -16.223629795 -0.25 -3.9090095
+frameupper_subshape1_to_frameupper_subshape3.Rotation 0 134.9415292722403 0
 
 Shape Union frameupper_subshape8
 frameupper_subshape8.Parameters frameupper_subshape7 frameupper_subshape3 frameupper_subshape1_to_frameupper_subshape3
 
 Orientation frameupper_subshape1_to_frameupper_subshape4
-frameupper_subshape1_to_frameupper_subshape4.Position -44.734721 0.0 0.0
-frameupper_subshape1_to_frameupper_subshape4.Rotation 0 0 0 0 0 0 
+frameupper_subshape1_to_frameupper_subshape4.Position -43.53553399 0.0 0.0
+frameupper_subshape1_to_frameupper_subshape4.Rotation 0 0 0
 
 Shape Union frameupper_subshape9
 frameupper_subshape9.Parameters frameupper_subshape8 frameupper_subshape4 frameupper_subshape1_to_frameupper_subshape4
 
 Orientation frameupper_subshape1_to_frameupper_subshape5
-frameupper_subshape1_to_frameupper_subshape5.Position -31.8205075 0.0 -0.5
-frameupper_subshape1_to_frameupper_subshape5.Rotation 0 0 0 0 90.0 90.0 
+frameupper_subshape1_to_frameupper_subshape5.Position -30.62132049 0.0 -0.5
+frameupper_subshape1_to_frameupper_subshape5.Rotation 180 0 180.0
 
 Shape Union frameupper_subshape10
 frameupper_subshape10.Parameters frameupper_subshape9 frameupper_subshape5 frameupper_subshape1_to_frameupper_subshape5
 
 Orientation frameupper_subshape1_to_frameupper_subshape6
-frameupper_subshape1_to_frameupper_subshape6.Position -27.911497699999998 -0.25 -3.9090095
-frameupper_subshape1_to_frameupper_subshape6.Rotation 0 0 0 0 134.9415292722403 -3.659357239766313 
+frameupper_subshape1_to_frameupper_subshape6.Position -27.311904194999997 -0.25 -3.9090095
+frameupper_subshape1_to_frameupper_subshape6.Rotation 0 134.9415292722403 0
 
 Shape Union frameupper_subshape11
 frameupper_subshape11.Parameters frameupper_subshape10 frameupper_subshape6 frameupper_subshape1_to_frameupper_subshape6
@@ -75,4 +75,4 @@ Volume frameupper
 frameupper.Mother WorldVolume
 frameupper.Material Aluminium
 frameupper.Shape frameupper_subshape11
-frameupper.Position 22.3673605 0.0 -2.0
+frameupper.Position 21.767766995 0.0 -2.0

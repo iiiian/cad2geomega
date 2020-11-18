@@ -85,7 +85,7 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
             geo.write('\n')
             geo.write(o_name+'.Position '+str(pos[0])+' '+str(pos[1])+' '+str(pos[2]))
             geo.write('\n')
-            geo.write(o_name+'.Rotation '+str(orientation[0])+' '+str(orientation[1])+' '+str(orientation[2])+' '+str(orientation[3])+' '+str(orientation[4])+' '+str(orientation[5])+' ')
+            geo.write(o_name+'.Rotation '+str(orientation[0])+' '+str(orientation[1])+' '+str(orientation[2]))
             geo.write('\n')
             geo.write('\n')
             #merge rectangles
@@ -108,7 +108,7 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
                 o_name=origin_name+'_to_'+sub_void_name[j]
                 geo.write('Orientation '+o_name)
                 geo.write('\n')
-                geo.write(o_name+'.Rotation '+str(orientation[0])+' '+str(orientation[1])+' '+str(orientation[2])+' '+str(orientation[3])+' '+str(orientation[4])+' '+str(orientation[5])+' ')
+                geo.write(o_name+'.Rotation '+str(orientation[0])+' '+str(orientation[1])+' '+str(orientation[2]))
                 geo.write('\n')
                 geo.write(o_name+'.Position '+str(pos[0])+' '+str(pos[1])+' '+str(pos[2]))
                 geo.write('\n')
