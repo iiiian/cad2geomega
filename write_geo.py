@@ -46,6 +46,19 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
                     sub_void.append([mid, orientation])
                     sub_void_name.append(shape_n)
 
+
+            
+            if re.match(r"cyl",line):
+                if_match=True
+                shape_n=v_name+"_subshape"+str(i)
+                [bo, mid, orientation]=write_cyl(line, shape_n,file_out)
+                if bo==1:
+                    sub_real.append([mid, orientation])
+                    sub_real_name.append(shape_n)
+                elif bo==0:
+                    sub_void.append([mid, orientation])
+                    sub_void_name.append(shape_n)
+
             line=f_in.readline()
             if if_match:
                 i+=1
@@ -95,9 +108,9 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
                 o_name=origin_name+'_to_'+sub_void_name[j]
                 geo.write('Orientation '+o_name)
                 geo.write('\n')
-                geo.write(o_name+'.Position '+str(pos[0])+' '+str(pos[1])+' '+str(pos[2]))
-                geo.write('\n')
                 geo.write(o_name+'.Rotation '+str(orientation[0])+' '+str(orientation[1])+' '+str(orientation[2])+' '+str(orientation[3])+' '+str(orientation[4])+' '+str(orientation[5])+' ')
+                geo.write('\n')
+                geo.write(o_name+'.Position '+str(pos[0])+' '+str(pos[1])+' '+str(pos[2]))
                 geo.write('\n')
                 geo.write('\n')
                 #merge rectangles

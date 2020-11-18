@@ -90,6 +90,8 @@ def write_ptri(line,shape_name,geofile):
         z_prime=nor(d-c)
         theta=r2d(np.arccos(np.dot(z,z_prime)))
         xy_norm=(z_prime[0]**2+z_prime[1]**2)**0.5
+        if xy_norm==0:
+            xy_norm=1
         phi=r2d(np.arccos(z_prime[0]/xy_norm))
         if z_prime[1] >= 0:
             phi=phi
@@ -123,6 +125,41 @@ def write_ztbox(line,shape_name,geofile):
     z_prime=nor(d-c)
     theta=r2d(np.arccos(np.dot(z,z_prime)))
     xy_norm=(z_prime[0]**2+z_prime[1]**2)**0.5
+    if xy_norm==0:
+        xy_norm=1
+    phi=r2d(np.arccos(z_prime[0]/xy_norm))
+    if z_prime[1] >= 0:
+        phi=phi
+    else:
+        phi=-phi
+    orientation=[0,0,0,0,theta,phi]
+    ans=[bo,mid,orientation]
+    return ans
+
+
+def write_cyl(line,shape_name,geofile):
+    p=re.findall(r"cyl ([0-1]) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)",line)
+    a=np.array([float(p[0][1]),float(p[0][2]),float(p[0][3])])
+    b=np.array([float(p[0][4]),float(p[0][5]),float(p[0][6])])
+    c=np.array([float(p[0][7]),float(p[0][8]),float(p[0][9])])
+    mid=(a+c)/2
+    bo=float(p[0][0])
+    r=di(a,b)/2
+    z_h=di(b,c)/2
+    with open(geofile,'a') as geo:
+        geo.write('Shape TUBE '+shape_name)
+        geo.write('\n')
+        geo.write(shape_name+'.Parameters 0 '+str(r)+' '+str(z_h)+' 0 360')
+        geo.write('\n')
+        geo.write('\n')
+    
+    z=np.array([0,0,1])
+    z_prime=nor(c-b)
+    theta=r2d(np.arccos(np.dot(z,z_prime)))
+    print(theta)
+    xy_norm=(z_prime[0]**2+z_prime[1]**2)**0.5
+    if xy_norm==0:
+        xy_norm=1
     phi=r2d(np.arccos(z_prime[0]/xy_norm))
     if z_prime[1] >= 0:
         phi=phi
