@@ -90,10 +90,10 @@ def write_ptri(line,shape_name,geofile):
         x=np.array([1,0,0])
         y=np.array([0,1,0])
         x_prime=nor(b-a)
-        y_prime=nor(c-a)
-        z_prime=nor(d-c)
+        y_prime=nor(d-c)
+        z_prime=nor(c-a)
         theta_z=r2d(np.arccos(np.dot(z,z_prime)))
-        theta_x=r2d(np.arccos(np.dot(x,x_prime)))+90
+        theta_x=r2d(np.arccos(np.dot(x,x_prime)))
         theta_y=r2d(np.arccos(np.dot(y,y_prime)))
         print('---------------------------------')
         print('x = '+str(theta_x))
@@ -101,23 +101,60 @@ def write_ptri(line,shape_name,geofile):
         print('z = '+str(theta_z))
         print('---------------------------------')
         #orientation=[theta_x,theta_z,theta_y]
-        orientation=[180,0,theta_x]
+        orientation=[0,theta_z,0]
+        ans=[bo,mid,orientation]
+        print(mid)
+        return ans
+
+
+def write_ptri2(line,shape_name,geofile):
+    print(line)
+    p=re.findall(r"ptri2 ([0-1]) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)",line)
+    mid=np.array([float(p[0][1]),float(p[0][2]),float(p[0][3])])
+    leng=np.array([float(p[0][4]),float(p[0][5]),float(p[0][6])])
+    orientation=np.array([float(p[0][7]),float(p[0][8]),float(p[0][9])])
+    with open(geofile,'a') as geo:
+        sub1_name=shape_name+'_sub1'
+        geo.write('Shape TRD1 '+sub1_name)
+        geo.write('\n')
+        geo.write(sub1_name+'.Parameters '+str(leng[0]+0.5)+' '+str(0.5)+' '+str(leng[1]/2)+' '+str(leng[2]/2))
+        geo.write('\n')
+        geo.write('\n')
+        sub2_name=shape_name+'_sub2'
+        geo.write('Shape BOX '+sub2_name)
+        geo.write('\n')
+        geo.write(sub2_name+'.Parameters '+str((leng[0]+1)/2)+' '+str(leng[1]/2)+' '+str(leng[2]/2))
+        geo.write('\n')
+        geo.write('\n')
+        #write orientation
+        o_name=sub1_name+'_to_'+sub2_name
+        geo.write('Orientation '+o_name)
+        geo.write('\n')
+        geo.write(o_name+'.Position '+str(leng[0]/2)+' 0 0')
+        geo.write('\n')
+        geo.write('\n')
+        #subtract
+        geo.write('Shape Subtraction '+shape_name)
+        geo.write('\n')
+        geo.write(shape_name+'.Parameters '+sub1_name+' '+sub2_name+' '+o_name)
+        geo.write('\n')
+        geo.write('\n')
+
+        bo=float(p[0][0])
         ans=[bo,mid,orientation]
         return ans
 
 
 def write_ztbox(line,shape_name,geofile):
-    p=re.findall(r"ztrec ([0-1]) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)",line)
-    a=np.array([float(p[0][1]),float(p[0][2]),float(p[0][3])])
-    b=np.array([float(p[0][4]),float(p[0][5]),float(p[0][6])])
-    c=np.array([float(p[0][7]),float(p[0][8]),float(p[0][9])])
-    d=np.array([float(p[0][10]),float(p[0][11]),float(p[0][12])])
-    mid=(a+d)/2
-    bo=float(p[0][0])
-    x_h=di(a,b)/2
-    y_h=di(c,b)/2
-    z_h=di(d,c)/2
-
+    a=re.findall(r"ztrec ([0-1]) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)",line)
+    p1=np.array([float(a[0][1]),float(a[0][2]),float(a[0][3])])
+    p2=np.array([float(a[0][4]),float(a[0][5]),float(a[0][6])])
+    mid=(p1+p2)/2
+    vec=p1-p2
+    bo=float(a[0][0])
+    x_h=abs(vec[0])/2
+    y_h=abs(vec[1])/2
+    z_h=abs(vec[2])/2
     with open(geofile,'a') as geo:
         geo.write('Shape Box '+shape_name)
         geo.write('\n')
@@ -125,18 +162,7 @@ def write_ztbox(line,shape_name,geofile):
         geo.write('\n')
         geo.write('\n')
     
-    z=np.array([0,0,1])
-    z_prime=nor(d-c)
-    theta=r2d(np.arccos(np.dot(z,z_prime)))
-    xy_norm=(z_prime[0]**2+z_prime[1]**2)**0.5
-    if xy_norm==0:
-        xy_norm=1
-    phi=r2d(np.arccos(z_prime[0]/xy_norm))
-    if z_prime[1] >= 0:
-        phi=phi
-    else:
-        phi=-phi
-    orientation=[0,theta,phi]
+    orientation=np.array([float(a[0][7]),float(a[0][8]),float(a[0][9])])
     ans=[bo,mid,orientation]
     return ans
 

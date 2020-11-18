@@ -24,7 +24,7 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
                     sub_void.append([mid, orientation])
                     sub_void_name.append(shape_n)
 
-            if re.match(r"ptri",line):
+            if re.match(r"ptri ",line):
                 if_match=True
                 shape_n=v_name+"_subshape"+str(i)
                 [bo, mid, orientation]=write_ptri(line, shape_n,file_out)
@@ -52,6 +52,18 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
                 if_match=True
                 shape_n=v_name+"_subshape"+str(i)
                 [bo, mid, orientation]=write_cyl(line, shape_n,file_out)
+                if bo==1:
+                    sub_real.append([mid, orientation])
+                    sub_real_name.append(shape_n)
+                elif bo==0:
+                    sub_void.append([mid, orientation])
+                    sub_void_name.append(shape_n)
+
+
+            if re.match(r"ptri2",line):
+                if_match=True
+                shape_n=v_name+"_subshape"+str(i)
+                [bo, mid, orientation]=write_ptri2(line, shape_n,file_out)
                 if bo==1:
                     sub_real.append([mid, orientation])
                     sub_real_name.append(shape_n)
