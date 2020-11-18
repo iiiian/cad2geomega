@@ -1,0 +1,70 @@
+Shape Box sensorbacksupport_subshape1
+sensorbacksupport_subshape1.Parameters 3.0 1.0 3.0
+
+Shape Box sensorbacksupport_subshape2
+sensorbacksupport_subshape2.Parameters 1.0 2.5 3.0
+
+Shape TUBE sensorbacksupport_subshape3
+sensorbacksupport_subshape3.Parameters 0 1.5 1.0 0 360
+
+Shape Box sensorbacksupport_subshape4
+sensorbacksupport_subshape4.Parameters 3.0 1.0 3.0
+
+Shape Box sensorbacksupport_subshape5
+sensorbacksupport_subshape5.Parameters 1.0 2.5 3.0
+
+Shape TUBE sensorbacksupport_subshape6
+sensorbacksupport_subshape6.Parameters 0 1.5 1.0 0 360
+
+Shape Box sensorbacksupport_subshape7
+sensorbacksupport_subshape7.Parameters 26.0 0.5 3.0
+
+Include Materials.geo
+
+Orientation sensorbacksupport_subshape1_to_sensorbacksupport_subshape2
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape2.Position -4.0 -1.5 0.0
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape2.Rotation 0 0 0
+
+Shape Union sensorbacksupport_subshape8
+sensorbacksupport_subshape8.Parameters sensorbacksupport_subshape1 sensorbacksupport_subshape2 sensorbacksupport_subshape1_to_sensorbacksupport_subshape2
+
+Orientation sensorbacksupport_subshape1_to_sensorbacksupport_subshape4
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape4.Position -62.0 0.0 0.0
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape4.Rotation 0 0 0
+
+Shape Union sensorbacksupport_subshape9
+sensorbacksupport_subshape9.Parameters sensorbacksupport_subshape8 sensorbacksupport_subshape4 sensorbacksupport_subshape1_to_sensorbacksupport_subshape4
+
+Orientation sensorbacksupport_subshape1_to_sensorbacksupport_subshape5
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape5.Position -58.0 -1.5 0.0
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape5.Rotation 0 0 0
+
+Shape Union sensorbacksupport_subshape10
+sensorbacksupport_subshape10.Parameters sensorbacksupport_subshape9 sensorbacksupport_subshape5 sensorbacksupport_subshape1_to_sensorbacksupport_subshape5
+
+Orientation sensorbacksupport_subshape1_to_sensorbacksupport_subshape7
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape7.Position -31.0 -3.5 0.0
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape7.Rotation 0 0 0
+
+Shape Union sensorbacksupport_subshape11
+sensorbacksupport_subshape11.Parameters sensorbacksupport_subshape10 sensorbacksupport_subshape7 sensorbacksupport_subshape1_to_sensorbacksupport_subshape7
+
+Orientation sensorbacksupport_subshape1_to_sensorbacksupport_subshape3
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape3.Rotation 0 90.0 -90.0
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape3.Position 0.0 0.0 0.0
+
+Shape Subtraction sensorbacksupport_subshape12
+sensorbacksupport_subshape12.Parameters sensorbacksupport_subshape11 sensorbacksupport_subshape3 sensorbacksupport_subshape1_to_sensorbacksupport_subshape3
+
+Orientation sensorbacksupport_subshape1_to_sensorbacksupport_subshape6
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape6.Rotation 0 90.0 -90.0
+sensorbacksupport_subshape1_to_sensorbacksupport_subshape6.Position -62.0 0.0 0.0
+
+Shape Subtraction sensorbacksupport_subshape13
+sensorbacksupport_subshape13.Parameters sensorbacksupport_subshape12 sensorbacksupport_subshape6 sensorbacksupport_subshape1_to_sensorbacksupport_subshape6
+
+Volume sensorbacksupport
+sensorbacksupport.Mother WorldVolume
+sensorbacksupport.Material Aluminium
+sensorbacksupport.Shape sensorbacksupport_subshape13
+sensorbacksupport.Position 31.0 4.0 0.0

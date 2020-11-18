@@ -13,11 +13,11 @@ pcbconnector_subshape4.Parameters 5.0 0.9999999999999999 2.5
 Shape Box pcbconnector_subshape5
 pcbconnector_subshape5.Parameters 3.0 0.5 1.5
 
-Shape Box pcbconnector_subshape6
-pcbconnector_subshape6.Parameters 5.0 0.9999999999999999 2.5
+Shape TUBE pcbconnector_subshape6
+pcbconnector_subshape6.Parameters 0 1.5 0.675 0 360
 
-Shape Box pcbconnector_subshape7
-pcbconnector_subshape7.Parameters 3.0 0.5 1.5
+Shape TUBE pcbconnector_subshape7
+pcbconnector_subshape7.Parameters 0 1.5 0.675 0 360
 
 Shape Box pcbconnector_subshape8
 pcbconnector_subshape8.Parameters 5.0 0.9999999999999999 2.5
@@ -25,66 +25,106 @@ pcbconnector_subshape8.Parameters 5.0 0.9999999999999999 2.5
 Shape Box pcbconnector_subshape9
 pcbconnector_subshape9.Parameters 3.0 0.5 1.5
 
+Shape Box pcbconnector_subshape10
+pcbconnector_subshape10.Parameters 5.0 0.9999999999999999 2.5
+
+Shape Box pcbconnector_subshape11
+pcbconnector_subshape11.Parameters 3.0 0.5 1.5
+
+Shape TUBE pcbconnector_subshape12
+pcbconnector_subshape12.Parameters 0 1.5 0.675 0 360
+
+Shape TUBE pcbconnector_subshape13
+pcbconnector_subshape13.Parameters 0 1.5 0.675 0 360
+
 Include Materials.geo
 
 Orientation pcbconnector_subshape1_to_pcbconnector_subshape2
 pcbconnector_subshape1_to_pcbconnector_subshape2.Position 13.0 1.6749999999999998 22.0
-pcbconnector_subshape1_to_pcbconnector_subshape2.Rotation 0 0 0 0 0 0 
+pcbconnector_subshape1_to_pcbconnector_subshape2.Rotation 0 0 0
 
-Shape Union pcbconnector_subshape10
-pcbconnector_subshape10.Parameters pcbconnector_subshape1 pcbconnector_subshape2 pcbconnector_subshape1_to_pcbconnector_subshape2
+Shape Union pcbconnector_subshape14
+pcbconnector_subshape14.Parameters pcbconnector_subshape1 pcbconnector_subshape2 pcbconnector_subshape1_to_pcbconnector_subshape2
 
 Orientation pcbconnector_subshape1_to_pcbconnector_subshape4
 pcbconnector_subshape1_to_pcbconnector_subshape4.Position 13.0 1.6749999999999998 -22.0
-pcbconnector_subshape1_to_pcbconnector_subshape4.Rotation 0 0 0 0 0 0 
+pcbconnector_subshape1_to_pcbconnector_subshape4.Rotation 0 0 0
 
-Shape Union pcbconnector_subshape11
-pcbconnector_subshape11.Parameters pcbconnector_subshape10 pcbconnector_subshape4 pcbconnector_subshape1_to_pcbconnector_subshape4
-
-Orientation pcbconnector_subshape1_to_pcbconnector_subshape6
-pcbconnector_subshape1_to_pcbconnector_subshape6.Position -13.0 1.6749999999999998 22.0
-pcbconnector_subshape1_to_pcbconnector_subshape6.Rotation 0 0 0 0 0 0 
-
-Shape Union pcbconnector_subshape12
-pcbconnector_subshape12.Parameters pcbconnector_subshape11 pcbconnector_subshape6 pcbconnector_subshape1_to_pcbconnector_subshape6
+Shape Union pcbconnector_subshape15
+pcbconnector_subshape15.Parameters pcbconnector_subshape14 pcbconnector_subshape4 pcbconnector_subshape1_to_pcbconnector_subshape4
 
 Orientation pcbconnector_subshape1_to_pcbconnector_subshape8
-pcbconnector_subshape1_to_pcbconnector_subshape8.Position -13.0 1.6749999999999998 -22.0
-pcbconnector_subshape1_to_pcbconnector_subshape8.Rotation 0 0 0 0 0 0 
+pcbconnector_subshape1_to_pcbconnector_subshape8.Position -13.0 1.6749999999999998 22.0
+pcbconnector_subshape1_to_pcbconnector_subshape8.Rotation 0 0 0
 
-Shape Union pcbconnector_subshape13
-pcbconnector_subshape13.Parameters pcbconnector_subshape12 pcbconnector_subshape8 pcbconnector_subshape1_to_pcbconnector_subshape8
+Shape Union pcbconnector_subshape16
+pcbconnector_subshape16.Parameters pcbconnector_subshape15 pcbconnector_subshape8 pcbconnector_subshape1_to_pcbconnector_subshape8
+
+Orientation pcbconnector_subshape1_to_pcbconnector_subshape10
+pcbconnector_subshape1_to_pcbconnector_subshape10.Position -13.0 1.6749999999999998 -22.0
+pcbconnector_subshape1_to_pcbconnector_subshape10.Rotation 0 0 0
+
+Shape Union pcbconnector_subshape17
+pcbconnector_subshape17.Parameters pcbconnector_subshape16 pcbconnector_subshape10 pcbconnector_subshape1_to_pcbconnector_subshape10
 
 Orientation pcbconnector_subshape1_to_pcbconnector_subshape3
+pcbconnector_subshape1_to_pcbconnector_subshape3.Rotation 0 0 0
 pcbconnector_subshape1_to_pcbconnector_subshape3.Position 13.0 1.175 23.0
-pcbconnector_subshape1_to_pcbconnector_subshape3.Rotation 0 0 0 0 0 0 
 
-Shape Subtraction pcbconnector_subshape14
-pcbconnector_subshape14.Parameters pcbconnector_subshape13 pcbconnector_subshape3 pcbconnector_subshape1_to_pcbconnector_subshape3
+Shape Subtraction pcbconnector_subshape18
+pcbconnector_subshape18.Parameters pcbconnector_subshape17 pcbconnector_subshape3 pcbconnector_subshape1_to_pcbconnector_subshape3
 
 Orientation pcbconnector_subshape1_to_pcbconnector_subshape5
+pcbconnector_subshape1_to_pcbconnector_subshape5.Rotation 0 0 0
 pcbconnector_subshape1_to_pcbconnector_subshape5.Position 13.0 1.175 -23.0
-pcbconnector_subshape1_to_pcbconnector_subshape5.Rotation 0 0 0 0 0 0 
 
-Shape Subtraction pcbconnector_subshape15
-pcbconnector_subshape15.Parameters pcbconnector_subshape14 pcbconnector_subshape5 pcbconnector_subshape1_to_pcbconnector_subshape5
+Shape Subtraction pcbconnector_subshape19
+pcbconnector_subshape19.Parameters pcbconnector_subshape18 pcbconnector_subshape5 pcbconnector_subshape1_to_pcbconnector_subshape5
+
+Orientation pcbconnector_subshape1_to_pcbconnector_subshape6
+pcbconnector_subshape1_to_pcbconnector_subshape6.Rotation 0 90.0 -90.0
+pcbconnector_subshape1_to_pcbconnector_subshape6.Position 25.0 0.0 24.5
+
+Shape Subtraction pcbconnector_subshape20
+pcbconnector_subshape20.Parameters pcbconnector_subshape19 pcbconnector_subshape6 pcbconnector_subshape1_to_pcbconnector_subshape6
 
 Orientation pcbconnector_subshape1_to_pcbconnector_subshape7
-pcbconnector_subshape1_to_pcbconnector_subshape7.Position -13.0 1.175 23.0
-pcbconnector_subshape1_to_pcbconnector_subshape7.Rotation 0 0 0 0 0 0 
+pcbconnector_subshape1_to_pcbconnector_subshape7.Rotation 0 90.0 -90.0
+pcbconnector_subshape1_to_pcbconnector_subshape7.Position 25.0 0.0 -24.5
 
-Shape Subtraction pcbconnector_subshape16
-pcbconnector_subshape16.Parameters pcbconnector_subshape15 pcbconnector_subshape7 pcbconnector_subshape1_to_pcbconnector_subshape7
+Shape Subtraction pcbconnector_subshape21
+pcbconnector_subshape21.Parameters pcbconnector_subshape20 pcbconnector_subshape7 pcbconnector_subshape1_to_pcbconnector_subshape7
 
 Orientation pcbconnector_subshape1_to_pcbconnector_subshape9
-pcbconnector_subshape1_to_pcbconnector_subshape9.Position -13.0 1.175 -23.0
-pcbconnector_subshape1_to_pcbconnector_subshape9.Rotation 0 0 0 0 0 0 
+pcbconnector_subshape1_to_pcbconnector_subshape9.Rotation 0 0 0
+pcbconnector_subshape1_to_pcbconnector_subshape9.Position -13.0 1.175 23.0
 
-Shape Subtraction pcbconnector_subshape17
-pcbconnector_subshape17.Parameters pcbconnector_subshape16 pcbconnector_subshape9 pcbconnector_subshape1_to_pcbconnector_subshape9
+Shape Subtraction pcbconnector_subshape22
+pcbconnector_subshape22.Parameters pcbconnector_subshape21 pcbconnector_subshape9 pcbconnector_subshape1_to_pcbconnector_subshape9
+
+Orientation pcbconnector_subshape1_to_pcbconnector_subshape11
+pcbconnector_subshape1_to_pcbconnector_subshape11.Rotation 0 0 0
+pcbconnector_subshape1_to_pcbconnector_subshape11.Position -13.0 1.175 -23.0
+
+Shape Subtraction pcbconnector_subshape23
+pcbconnector_subshape23.Parameters pcbconnector_subshape22 pcbconnector_subshape11 pcbconnector_subshape1_to_pcbconnector_subshape11
+
+Orientation pcbconnector_subshape1_to_pcbconnector_subshape12
+pcbconnector_subshape1_to_pcbconnector_subshape12.Rotation 0 90.0 -90.0
+pcbconnector_subshape1_to_pcbconnector_subshape12.Position -25.0 0.0 24.5
+
+Shape Subtraction pcbconnector_subshape24
+pcbconnector_subshape24.Parameters pcbconnector_subshape23 pcbconnector_subshape12 pcbconnector_subshape1_to_pcbconnector_subshape12
+
+Orientation pcbconnector_subshape1_to_pcbconnector_subshape13
+pcbconnector_subshape1_to_pcbconnector_subshape13.Rotation 0 90.0 -90.0
+pcbconnector_subshape1_to_pcbconnector_subshape13.Position -25.0 0.0 -24.5
+
+Shape Subtraction pcbconnector_subshape25
+pcbconnector_subshape25.Parameters pcbconnector_subshape24 pcbconnector_subshape13 pcbconnector_subshape1_to_pcbconnector_subshape13
 
 Volume pcbconnector
 pcbconnector.Mother WorldVolume
 pcbconnector.Material Aluminium
-pcbconnector.Shape pcbconnector_subshape17
+pcbconnector.Shape pcbconnector_subshape25
 pcbconnector.Position 0.0 0.0 0.0
