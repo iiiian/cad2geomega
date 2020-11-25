@@ -23,22 +23,22 @@ Shape Box sensorcover_subshape8
 sensorcover_subshape8.Parameters 3.0 1.5 3.0
 
 Shape TUBE sensorcover_subshape9
-sensorcover_subshape9.Parameters 0 1.5 1.5 0 360
+sensorcover_subshape9.Parameters 0 1.5 1.5001 0 360
 
 Shape TUBE sensorcover_subshape10
-sensorcover_subshape10.Parameters 0 1.5 1.5 0 360
+sensorcover_subshape10.Parameters 0 1.5 1.5001 0 360
 
 Shape TUBE sensorcover_subshape11
-sensorcover_subshape11.Parameters 0 1.5 1.5 0 360
+sensorcover_subshape11.Parameters 0 1.5 1.5001 0 360
 
 Shape TUBE sensorcover_subshape12
-sensorcover_subshape12.Parameters 0 1.5 1.5 0 360
+sensorcover_subshape12.Parameters 0 1.5 1.5001 0 360
 
 Shape TUBE sensorcover_subshape13
-sensorcover_subshape13.Parameters 0 1.5 1.5 0 360
+sensorcover_subshape13.Parameters 0 1.5 1.5001 0 360
 
 Shape TUBE sensorcover_subshape14
-sensorcover_subshape14.Parameters 0 1.5 1.5 0 360
+sensorcover_subshape14.Parameters 0 1.5 1.5001 0 360
 
 Include Materials.geo
 

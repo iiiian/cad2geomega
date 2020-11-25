@@ -14,10 +14,10 @@ Shape Box pcbconnector_subshape5
 pcbconnector_subshape5.Parameters 3.0 0.5 1.5
 
 Shape TUBE pcbconnector_subshape6
-pcbconnector_subshape6.Parameters 0 1.5 0.675 0 360
+pcbconnector_subshape6.Parameters 0 1.5 0.6751 0 360
 
 Shape TUBE pcbconnector_subshape7
-pcbconnector_subshape7.Parameters 0 1.5 0.675 0 360
+pcbconnector_subshape7.Parameters 0 1.5 0.6751 0 360
 
 Shape Box pcbconnector_subshape8
 pcbconnector_subshape8.Parameters 5.0 0.9999999999999999 2.5
@@ -32,10 +32,10 @@ Shape Box pcbconnector_subshape11
 pcbconnector_subshape11.Parameters 3.0 0.5 1.5
 
 Shape TUBE pcbconnector_subshape12
-pcbconnector_subshape12.Parameters 0 1.5 0.675 0 360
+pcbconnector_subshape12.Parameters 0 1.5 0.6751 0 360
 
 Shape TUBE pcbconnector_subshape13
-pcbconnector_subshape13.Parameters 0 1.5 0.675 0 360
+pcbconnector_subshape13.Parameters 0 1.5 0.6751 0 360
 
 Include Materials.geo
 

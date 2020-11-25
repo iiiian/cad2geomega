@@ -2,16 +2,16 @@ Shape Box basebeamupper_subshape1
 basebeamupper_subshape1.Parameters 31.0 3.0 3.5
 
 Shape TUBE basebeamupper_subshape2
-basebeamupper_subshape2.Parameters 0 1.5 1.5 0 360
+basebeamupper_subshape2.Parameters 0 1.5 1.5001 0 360
 
 Shape TUBE basebeamupper_subshape3
-basebeamupper_subshape3.Parameters 0 1.5 1.5 0 360
+basebeamupper_subshape3.Parameters 0 1.5 1.5001 0 360
 
 Shape TUBE basebeamupper_subshape4
-basebeamupper_subshape4.Parameters 0 1.5 2.75 0 360
+basebeamupper_subshape4.Parameters 0 1.5 2.7501 0 360
 
 Shape TUBE basebeamupper_subshape5
-basebeamupper_subshape5.Parameters 0 1.5 2.75 0 360
+basebeamupper_subshape5.Parameters 0 1.5 2.7501 0 360
 
 Include Materials.geo
 

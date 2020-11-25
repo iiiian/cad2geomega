@@ -5,7 +5,7 @@ Shape Box sensorbacksupport_subshape2
 sensorbacksupport_subshape2.Parameters 1.0 2.5 3.0
 
 Shape TUBE sensorbacksupport_subshape3
-sensorbacksupport_subshape3.Parameters 0 1.5 1.0 0 360
+sensorbacksupport_subshape3.Parameters 0 1.5 1.0001 0 360
 
 Shape Box sensorbacksupport_subshape4
 sensorbacksupport_subshape4.Parameters 3.0 1.0 3.0
@@ -14,7 +14,7 @@ Shape Box sensorbacksupport_subshape5
 sensorbacksupport_subshape5.Parameters 1.0 2.5 3.0
 
 Shape TUBE sensorbacksupport_subshape6
-sensorbacksupport_subshape6.Parameters 0 1.5 1.0 0 360
+sensorbacksupport_subshape6.Parameters 0 1.5 1.0001 0 360
 
 Shape Box sensorbacksupport_subshape7
 sensorbacksupport_subshape7.Parameters 26.0 0.5 3.0

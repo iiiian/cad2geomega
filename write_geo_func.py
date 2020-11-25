@@ -175,7 +175,7 @@ def write_cyl(line,shape_name,geofile):
     mid=(a+c)/2
     bo=float(p[0][0])
     r=di(a,b)/2
-    z_h=di(b,c)/2
+    z_h=di(b,c)/2+0.0001
     with open(geofile,'a') as geo:
         geo.write('Shape TUBE '+shape_name)
         geo.write('\n')
