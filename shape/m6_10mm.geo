@@ -17,4 +17,4 @@ Volume m6_10mm
 m6_10mm.Mother WorldVolume
 m6_10mm.Material Aluminium
 m6_10mm.Shape m6_10mm_subshape3
-m6_10mm.Position 0.0 0.0 13.0
+m6_10mm.Position 0.0 0.0 -3.0

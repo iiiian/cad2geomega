@@ -17,4 +17,4 @@ Volume m3_6mm
 m3_6mm.Mother WorldVolume
 m3_6mm.Material Aluminium
 m3_6mm.Shape m3_6mm_subshape3
-m3_6mm.Position 0.0 0.0 7.5
+m3_6mm.Position 0.0 0.0 -1.5

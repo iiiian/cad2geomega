@@ -291,8 +291,14 @@ wall_subshape1_to_wall_subshape26.Position 10.5 72.5 -52.5
 Shape Subtraction wall_subshape55
 wall_subshape55.Parameters wall_subshape54 wall_subshape26 wall_subshape1_to_wall_subshape26
 
-Volume wall
-wall.Mother WorldVolume
-wall.Material Aluminium
-wall.Shape wall_subshape55
-wall.Position 3.0 -33.0 54.0
+Volume wall1
+wall1.Mother wall1_mother
+wall1.Material Aluminium
+wall1.Shape wall_subshape55
+wall1.Position 3.0 -33.0 54.0
+
+Volume wall2
+wall1.Mother wall2_mother
+wall1.Material Aluminium
+wall1.Shape wall_subshape55
+wall1.Position 3.0 -33.0 54.0

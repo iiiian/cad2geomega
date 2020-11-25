@@ -3,7 +3,7 @@ from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
 import plotly.express as px
 import pandas as pd
-
+from tqdm import tqdm
  
 car=re.compile(r"CARTESIAN_POINT \( 'NONE',  \( (-?[0-9]+\.[0-9]+E*-?[0-9]*), (-?[0-9]+\.[0-9]+E*-?[0-9]*), (-?[0-9]+\.[0-9]+E*-?[0-9]*) \) \) ;")
 vert=re.compile(r"VERTEX_POINT \( 'NONE', #([0-9]+) \) ;")
@@ -37,6 +37,7 @@ def view_line(file,sup=True):
     fig = plt.figure()
     ax = plt.axes(projection='3d')
 
+    print("start finding edge curve")
     with open(file,'r',errors='ignore') as wall:
         edgc=[]
         edgc_com=[]
@@ -49,9 +50,12 @@ def view_line(file,sup=True):
                 com=[mat[0][1],mat[0][2],mat[0][3]]
                 edgc_com.append(com)
             line=wall.readline()
+    print("finish finding edge curve")
 
     tpo=[]
-    for i in range(len(edgc)):
+
+    print("start finding sub component of edge curve")
+    for i in tqdm(range(len(edgc))):
         ver1=find_ins(file,'vertex_point',edgc_com[i][0],sup=sup)
         ver2=find_ins(file,'vertex_point',edgc_com[i][1],sup=sup)
         car1=find_ins(file,'cartesian_point',ver1,sup=sup)
@@ -59,6 +63,9 @@ def view_line(file,sup=True):
         #ax.plot([float(car1[0]),float(car2[0])],[float(car1[1]),float(car2[1])],[float(car1[2]),float(car2[2])])
         tpo.append([float(car1[0]),float(car1[1]),float(car1[2]),str(i)])
         tpo.append([float(car2[0]),float(car2[1]),float(car2[2]),str(i)])
+    print("finish finding sub component of edge curve")
+
+    print("start excluding repeated edge curve")
     tpo_non_repeat=['none']
     for i in tpo:
         if_save=True
@@ -70,6 +77,9 @@ def view_line(file,sup=True):
             tpo_non_repeat.append(i)
 
     tpo_non_repeat=tpo_non_repeat[1:]
+    print("finished excluding repeated edge curve")
+
+    print("start ploting")
     df=pd.DataFrame(tpo,columns=['x','y','z','id'])
     fig=px.line_3d(df,x='x', y='y', z='z',color='id')
     fig.update_scenes(aspectmode='data')
