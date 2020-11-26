@@ -1,0 +1,591 @@
+// A spheric geometry for testing simulations
+// Don't change anything because it used for several cosima examples!!
+
+Name Spheric
+Version 1.0
+
+SurroundingSphere 10  0.0  0.0  0.0  10.0
+
+
+Include Materials.geo
+Include wall.geo
+Include sensorcover.geo
+Include basebeamupper.geo
+Include frameupper_old.geo
+Include sensorbacksupport.geo
+Include sheetupright.geo
+Include sheetback.geo
+Include pcbconnector.geo
+Include sheetfront.geo
+Include m6_10mm.geo
+Include m3_6mm.geo
+
+
+
+Volume WorldVolume             
+WorldVolume.Material Vacuum
+WorldVolume.Visibility 0   
+WorldVolume.Shape BRIK 50. 50. 50.
+WorldVolume.Mother 0
+
+
+Volume wall1_mother
+wall1_mother.Virtual true
+wall1_mother.Material Vacuum
+wall1_mother.Visibility 0   
+wall1_mother.Shape BRIK 50. 50. 50.
+wall1_mother.Mother WorldVolume    
+wall1_mother.Position 30.69 -27.25 71.5
+wall1_mother.Rotation 0 0 0
+
+Volume wall2_mother
+wall2_mother.Virtual true
+wall2_mother.Material Vacuum
+wall2_mother.Visibility 0   
+wall2_mother.Shape BRIK 50. 50. 50.
+wall2_mother.Mother WorldVolume    
+wall2_mother.Position -25.31 -27.25 71.5
+wall2_mother.Rotation 0 0 180
+
+
+Volume sensorcover1_mother
+sensorcover1_mother.Virtual true
+sensorcover1_mother.Material Vacuum
+sensorcover1_mother.Visibility 0   
+sensorcover1_mother.Shape BRIK 50. 50. 50.
+sensorcover1_mother.Mother WorldVolume    
+sensorcover1_mother.Position 24.96 -27.25 120.05
+sensorcover1_mother.Rotation 45 0 -90
+
+Volume sensorcover2_mother
+sensorcover2_mother.Virtual true
+sensorcover2_mother.Material Vacuum
+sensorcover2_mother.Visibility 0   
+sensorcover2_mother.Shape BRIK 50. 50. 50.
+sensorcover2_mother.Mother WorldVolume    
+sensorcover2_mother.Position -19.59 -27.25 120.05
+sensorcover2_mother.Rotation 45 0 90
+
+Volume sensorcover3_mother
+sensorcover3_mother.Virtual true
+sensorcover3_mother.Material Vacuum
+sensorcover3_mother.Visibility 0   
+sensorcover3_mother.Shape BRIK 50. 50. 50.
+sensorcover3_mother.Mother WorldVolume    
+sensorcover3_mother.Position 2.96 -65.25 100.5
+sensorcover3_mother.Rotation 180 0 0
+
+Volume sensorcover4_mother
+sensorcover4_mother.Virtual true
+sensorcover4_mother.Material Vacuum
+sensorcover4_mother.Visibility 0   
+sensorcover4_mother.Shape BRIK 50. 50. 50.
+sensorcover4_mother.Mother WorldVolume    
+sensorcover4_mother.Position 2.69 10.75 100.5
+sensorcover4_mother.Rotation 0 0 0
+
+
+Volume basebeamupper1_mother
+basebeamupper1_mother.Virtual true
+basebeamupper1_mother.Material Vacuum
+basebeamupper1_mother.Visibility 0   
+basebeamupper1_mother.Shape BRIK 50. 50. 50.
+basebeamupper1_mother.Mother WorldVolume    
+basebeamupper1_mother.Position 2.69 -51.75 76
+basebeamupper1_mother.Rotation 0 0 0
+
+Volume basebeamupper2_mother
+basebeamupper2_mother.Virtual true
+basebeamupper2_mother.Material Vacuum
+basebeamupper2_mother.Visibility 0   
+basebeamupper2_mother.Shape BRIK 50. 50. 50.
+basebeamupper2_mother.Mother WorldVolume    
+basebeamupper2_mother.Position 2.69 -2.75 76
+basebeamupper2_mother.Rotation 0 0 0
+
+
+Volume frameupper1_mother
+frameupper1_mother.Virtual true
+frameupper1_mother.Material Vacuum
+frameupper1_mother.Visibility 0   
+frameupper1_mother.Shape BRIK 50. 50. 50.
+frameupper1_mother.Mother WorldVolume    
+frameupper1_mother.Position 2.69 3.75 128.5
+frameupper1_mother.Rotation 180 0 0
+
+Volume frameupper2_mother
+frameupper2_mother.Virtual true
+frameupper2_mother.Material Vacuum
+frameupper2_mother.Visibility 0   
+frameupper2_mother.Shape BRIK 50. 50. 50
+frameupper2_mother.Mother WorldVolume    
+frameupper2_mother.Position 2.69 -58.25 128.5
+frameupper2_mother.Rotation -180 0 0
+
+
+Volume sensorbacksupport1_mother
+sensorbacksupport1_mother.Virtual true
+sensorbacksupport1_mother.Material Vacuum
+sensorbacksupport1_mother.Visibility 0   
+sensorbacksupport1_mother.Shape BRIK 50. 50. 50
+sensorbacksupport1_mother.Mother WorldVolume    
+sensorbacksupport1_mother.Position 2.69 5.75 100.5
+sensorbacksupport1_mother.Rotation 0 0 0
+
+Volume sensorbacksupport2_mother
+sensorbacksupport2_mother.Virtual true
+sensorbacksupport2_mother.Material Vacuum
+sensorbacksupport2_mother.Visibility 0   
+sensorbacksupport2_mother.Shape BRIK 50. 50. 50
+sensorbacksupport2_mother.Mother WorldVolume    
+sensorbacksupport2_mother.Position 21.43 -27.25 116.52
+sensorbacksupport2_mother.Rotation 45 0 -90
+
+Volume sensorbacksupport3_mother
+sensorbacksupport3_mother.Virtual true
+sensorbacksupport3_mother.Material Vacuum
+sensorbacksupport3_mother.Visibility 0   
+sensorbacksupport3_mother.Shape BRIK 50. 50. 50
+sensorbacksupport3_mother.Mother WorldVolume    
+sensorbacksupport3_mother.Position -16.05 -27.25 116.52
+sensorbacksupport3_mother.Rotation 135 0 -90
+
+Volume sensorbacksupport4_mother
+sensorbacksupport4_mother.Virtual true
+sensorbacksupport4_mother.Material Vacuum
+sensorbacksupport4_mother.Visibility 0   
+sensorbacksupport4_mother.Shape BRIK 50. 50. 50
+sensorbacksupport4_mother.Mother WorldVolume    
+sensorbacksupport4_mother.Position 2.69 -60.25 100.5
+sensorbacksupport4_mother.Rotation 0 0 180
+
+
+Volume sheetupright1_mother
+sheetupright1_mother.Virtual true
+sheetupright1_mother.Material Vacuum
+sheetupright1_mother.Visibility 0   
+sheetupright1_mother.Shape BRIK 50. 50. 50
+sheetupright1_mother.Mother WorldVolume    
+sheetupright1_mother.Position 30.69 10.25 100.5
+sheetupright1_mother.Rotation 0 0 0
+
+Volume sheetupright2_mother
+sheetupright2_mother.Virtual true
+sheetupright2_mother.Material Vacuum
+sheetupright2_mother.Visibility 0   
+sheetupright2_mother.Shape BRIK 50. 50. 50
+sheetupright2_mother.Mother WorldVolume    
+sheetupright2_mother.Position 30.69 -64.75 100.5
+sheetupright2_mother.Rotation -180 0 0
+
+Volume sheetupright3_mother
+sheetupright3_mother.Virtual true
+sheetupright3_mother.Material Vacuum
+sheetupright3_mother.Visibility 0   
+sheetupright3_mother.Shape BRIK 50. 50. 50
+sheetupright3_mother.Mother WorldVolume    
+sheetupright3_mother.Position -25.31 10.25 100.5
+sheetupright3_mother.Rotation 0 180 0
+
+Volume sheetupright4_mother
+sheetupright4_mother.Virtual true
+sheetupright4_mother.Material Vacuum
+sheetupright4_mother.Visibility 0   
+sheetupright4_mother.Shape BRIK 50. 50. 50
+sheetupright4_mother.Mother WorldVolume    
+sheetupright4_mother.Position -25.31 -64.75 100.5
+sheetupright4_mother.Rotation 180 180 0
+
+
+Volume sheetback_mother
+sheetback_mother.Virtual true
+sheetback_mother.Material Vacuum
+sheetback_mother.Visibility 0   
+sheetback_mother.Shape BRIK 50. 50. 50
+sheetback_mother.Mother WorldVolume    
+sheetback_mother.Position 2.69 -28.25 72.25
+sheetback_mother.Rotation 0 0 0
+
+
+Volume pcbconnector_mother
+pcbconnector_mother.Virtual true
+pcbconnector_mother.Material Vacuum
+pcbconnector_mother.Visibility 0   
+pcbconnector_mother.Shape BRIK 50. 50. 50
+pcbconnector_mother.Mother WorldVolume    
+pcbconnector_mother.Position 2.69 -27.25 80.18
+pcbconnector_mother.Rotation 90 0 0
+
+
+Volume sheetfront_mother
+sheetfront_mother.Virtual true
+sheetfront_mother.Material Vacuum
+sheetfront_mother.Visibility 0   
+sheetfront_mother.Shape BRIK 50. 50. 50
+sheetfront_mother.Mother WorldVolume    
+sheetfront_mother.Position 26.38 -61.25 121.47
+sheetfront_mother.Rotation 90 45 0
+
+
+%the direction of the screw is different from cad file, cad_direction: y, geo direction: z. 
+Volume m6_10mm1_mother
+m6_10mm1_mother.Virtual true
+m6_10mm1_mother.Material Vacuum
+m6_10mm1_mother.Visibility 0   
+m6_10mm1_mother.Shape BRIK 50. 50. 50
+m6_10mm1_mother.Mother WorldVolume    
+m6_10mm1_mother.Position 44.19 -66.75 80.5
+m6_10mm1_mother.Rotation 0 0 0
+
+Volume m6_10mm2_mother
+m6_10mm2_mother.Virtual true
+m6_10mm2_mother.Material Vacuum
+m6_10mm2_mother.Visibility 0   
+m6_10mm2_mother.Shape BRIK 50. 50. 50
+m6_10mm2_mother.Mother WorldVolume    
+m6_10mm2_mother.Position -38.81 -66.75 80.5
+m6_10mm2_mother.Rotation 0 0 0
+
+Volume m6_10mm3_mother
+m6_10mm3_mother.Virtual true
+m6_10mm3_mother.Material Vacuum
+m6_10mm3_mother.Visibility 0   
+m6_10mm3_mother.Shape BRIK 50. 50. 50
+m6_10mm3_mother.Mother WorldVolume    
+m6_10mm3_mother.Position 44.19 12.25 80.5
+m6_10mm3_mother.Rotation 0 0 0
+
+Volume m6_10mm4_mother
+m6_10mm4_mother.Virtual true
+m6_10mm4_mother.Material Vacuum
+m6_10mm4_mother.Visibility 0   
+m6_10mm4_mother.Shape BRIK 50. 50. 50
+m6_10mm4_mother.Mother WorldVolume    
+m6_10mm4_mother.Position -38.81 12.25 80.5
+m6_10mm4_mother.Rotation 0 0 0
+
+%small screw--------------------------------------
+
+Volume m3_6mm1_mother
+m3_6mm1_mother.Virtual true
+m3_6mm1_mother.Material Vacuum
+m3_6mm1_mother.Visibility 0   
+m3_6mm1_mother.Shape BRIK 50. 50. 50
+m3_6mm1_mother.Mother WorldVolume    
+m3_6mm1_mother.Position -34.31 -51.75 76
+m3_6mm1_mother.Rotation 0 -90 0
+
+Volume m3_6mm2_mother
+m3_6mm2_mother.Virtual true
+m3_6mm2_mother.Material Vacuum
+m3_6mm2_mother.Visibility 0   
+m3_6mm2_mother.Shape BRIK 50. 50. 50
+m3_6mm2_mother.Mother WorldVolume    
+m3_6mm2_mother.Position 39.69 -51.75 76
+m3_6mm2_mother.Rotation 0 90 0
+
+Volume m3_6mm3_mother
+m3_6mm3_mother.Virtual true
+m3_6mm3_mother.Material Vacuum
+m3_6mm3_mother.Visibility 0   
+m3_6mm3_mother.Shape BRIK 50. 50. 50
+m3_6mm3_mother.Mother WorldVolume    
+m3_6mm3_mother.Position 39.69 -2.75 76
+m3_6mm3_mother.Rotation 0 90 0
+
+Volume m3_6mm4_mother
+m3_6mm4_mother.Virtual true
+m3_6mm4_mother.Material Vacuum
+m3_6mm4_mother.Visibility 0   
+m3_6mm4_mother.Shape BRIK 50. 50. 50
+m3_6mm4_mother.Mother WorldVolume    
+m3_6mm4_mother.Position -34.31 -2.75 76
+m3_6mm4_mother.Rotation 0 -90 0
+
+Volume m3_6mm5_mother
+m3_6mm5_mother.Virtual true
+m3_6mm5_mother.Material Vacuum
+m3_6mm5_mother.Visibility 0   
+m3_6mm5_mother.Shape BRIK 50. 50. 50
+m3_6mm5_mother.Mother WorldVolume    
+m3_6mm5_mother.Position 27.69 -2.75 83.85
+m3_6mm5_mother.Rotation 0 0 0
+
+Volume m3_6mm6_mother
+m3_6mm6_mother.Virtual true
+m3_6mm6_mother.Material Vacuum
+m3_6mm6_mother.Visibility 0   
+m3_6mm6_mother.Shape BRIK 50. 50. 50
+m3_6mm6_mother.Mother WorldVolume    
+m3_6mm6_mother.Position 27.69 -51.75 83.85
+m3_6mm6_mother.Rotation 0 0 0
+
+Volume m3_6mm7_mother
+m3_6mm7_mother.Virtual true
+m3_6mm7_mother.Material Vacuum
+m3_6mm7_mother.Visibility 0   
+m3_6mm7_mother.Shape BRIK 50. 50. 50
+m3_6mm7_mother.Mother WorldVolume    
+m3_6mm7_mother.Position -22.31 -2.75 83.85
+m3_6mm7_mother.Rotation 0 0 0
+
+Volume m3_6mm8_mother
+m3_6mm8_mother.Virtual true
+m3_6mm8_mother.Material Vacuum
+m3_6mm8_mother.Visibility 0   
+m3_6mm8_mother.Shape BRIK 50. 50. 50
+m3_6mm8_mother.Mother WorldVolume    
+m3_6mm8_mother.Position -22.31 -51.75 83.85
+m3_6mm8_mother.Rotation 0 0 0
+
+Volume m3_6mm9_mother
+m3_6mm9_mother.Virtual true
+m3_6mm9_mother.Material Vacuum
+m3_6mm9_mother.Visibility 0   
+m3_6mm9_mother.Shape BRIK 50. 50. 50
+m3_6mm9_mother.Mother WorldVolume    
+m3_6mm9_mother.Position -28.31 3.75 135.5
+m3_6mm9_mother.Rotation 0 0 0
+
+Volume m3_6mm10_mother
+m3_6mm10_mother.Virtual true
+m3_6mm10_mother.Material Vacuum
+m3_6mm10_mother.Visibility 0   
+m3_6mm10_mother.Shape BRIK 50. 50. 50
+m3_6mm10_mother.Mother WorldVolume    
+m3_6mm10_mother.Position -28.31 -58.25 135.5
+m3_6mm10_mother.Rotation 0 0 0
+
+Volume m3_6mm11_mother
+m3_6mm11_mother.Virtual true
+m3_6mm11_mother.Material Vacuum
+m3_6mm11_mother.Visibility 0   
+m3_6mm11_mother.Shape BRIK 50. 50. 50
+m3_6mm11_mother.Mother WorldVolume    
+m3_6mm11_mother.Position 33.69 3.75 135.5
+m3_6mm11_mother.Rotation 0 0 0
+
+Volume m3_6mm12_mother
+m3_6mm12_mother.Virtual true
+m3_6mm12_mother.Material Vacuum
+m3_6mm12_mother.Visibility 0   
+m3_6mm12_mother.Shape BRIK 50. 50. 50
+m3_6mm12_mother.Mother WorldVolume    
+m3_6mm12_mother.Position 33.69 -58.25 135.5
+m3_6mm12_mother.Rotation 0 0 0
+
+Volume m3_6mm13_mother
+m3_6mm13_mother.Virtual true
+m3_6mm13_mother.Material Vacuum
+m3_6mm13_mother.Visibility 0   
+m3_6mm13_mother.Shape BRIK 50. 50. 50
+m3_6mm13_mother.Mother WorldVolume    
+m3_6mm13_mother.Position 33.69 16.75  125.5
+m3_6mm13_mother.Rotation -90 0 0
+
+Volume m3_6mm14_mother
+m3_6mm14_mother.Virtual true
+m3_6mm14_mother.Material Vacuum
+m3_6mm14_mother.Visibility 0   
+m3_6mm14_mother.Shape BRIK 50. 50. 50
+m3_6mm14_mother.Mother WorldVolume    
+m3_6mm14_mother.Position 33.69 16.75 75.5
+m3_6mm14_mother.Rotation -90 0 0
+
+Volume m3_6mm15_mother
+m3_6mm15_mother.Virtual true
+m3_6mm15_mother.Material Vacuum
+m3_6mm15_mother.Visibility 0   
+m3_6mm15_mother.Shape BRIK 50. 50. 50
+m3_6mm15_mother.Mother WorldVolume    
+m3_6mm15_mother.Position -28.31 16.75 75.5
+m3_6mm15_mother.Rotation -90 0 0
+
+Volume m3_6mm16_mother
+m3_6mm16_mother.Virtual true
+m3_6mm16_mother.Material Vacuum
+m3_6mm16_mother.Visibility 0   
+m3_6mm16_mother.Shape BRIK 50. 50. 50
+m3_6mm16_mother.Mother WorldVolume    
+m3_6mm16_mother.Position -28.31 16.75 125.5
+m3_6mm16_mother.Rotation -90 0 0
+
+Volume m3_6mm17_mother
+m3_6mm17_mother.Virtual true
+m3_6mm17_mother.Material Vacuum
+m3_6mm17_mother.Visibility 0   
+m3_6mm17_mother.Shape BRIK 50. 50. 50
+m3_6mm17_mother.Mother WorldVolume    
+m3_6mm17_mother.Position 33.69 16.75 100.5
+m3_6mm17_mother.Rotation -90 0 0
+
+Volume m3_6mm18_mother
+m3_6mm18_mother.Virtual true
+m3_6mm18_mother.Material Vacuum
+m3_6mm18_mother.Visibility 0   
+m3_6mm18_mother.Shape BRIK 50. 50. 50
+m3_6mm18_mother.Mother WorldVolume    
+m3_6mm18_mother.Position -28.31 16.75 100.5
+m3_6mm18_mother.Rotation -90 0 0
+
+Volume m3_6mm31_mother
+m3_6mm31_mother.Virtual true
+m3_6mm31_mother.Material Vacuum
+m3_6mm31_mother.Visibility 0   
+m3_6mm31_mother.Shape BRIK 50. 50. 50
+m3_6mm31_mother.Mother WorldVolume    
+m3_6mm31_mother.Position 33.69 -71.25 125.5
+m3_6mm31_mother.Rotation 90 0 0
+
+Volume m3_6mm32_mother
+m3_6mm32_mother.Virtual true
+m3_6mm32_mother.Material Vacuum
+m3_6mm32_mother.Visibility 0   
+m3_6mm32_mother.Shape BRIK 50. 50. 50
+m3_6mm32_mother.Mother WorldVolume    
+m3_6mm32_mother.Position 33.69 -71.25 75.5
+m3_6mm32_mother.Rotation 90 0 0
+
+Volume m3_6mm33_mother
+m3_6mm33_mother.Virtual true
+m3_6mm33_mother.Material Vacuum
+m3_6mm33_mother.Visibility 0   
+m3_6mm33_mother.Shape BRIK 50. 50. 50
+m3_6mm33_mother.Mother WorldVolume    
+m3_6mm33_mother.Position -28.31 -71.25 125.5
+m3_6mm33_mother.Rotation 90 0 0
+
+Volume m3_6mm34_mother
+m3_6mm34_mother.Virtual true
+m3_6mm34_mother.Material Vacuum
+m3_6mm34_mother.Visibility 0   
+m3_6mm34_mother.Shape BRIK 50. 50. 50
+m3_6mm34_mother.Mother WorldVolume    
+m3_6mm34_mother.Position -28.31 -71.25 75.5
+m3_6mm34_mother.Rotation 90 0 0
+
+Volume m3_6mm35_mother
+m3_6mm35_mother.Virtual true
+m3_6mm35_mother.Material Vacuum
+m3_6mm35_mother.Visibility 0   
+m3_6mm35_mother.Shape BRIK 50. 50. 50
+m3_6mm35_mother.Mother WorldVolume    
+m3_6mm35_mother.Position -28.31 -71.25 100.5
+m3_6mm35_mother.Rotation 90 0 0
+
+Volume m3_6mm36_mother
+m3_6mm36_mother.Virtual true
+m3_6mm36_mother.Material Vacuum
+m3_6mm36_mother.Visibility 0   
+m3_6mm36_mother.Shape BRIK 50. 50. 50
+m3_6mm36_mother.Mother WorldVolume    
+m3_6mm36_mother.Position 33.69 -71.25 100.5
+m3_6mm36_mother.Rotation 90 0 0
+
+Volume m3_6mm19_mother
+m3_6mm19_mother.Virtual true
+m3_6mm19_mother.Material Vacuum
+m3_6mm19_mother.Visibility 0   
+m3_6mm19_mother.Shape BRIK 50. 50. 50
+m3_6mm19_mother.Mother WorldVolume    
+m3_6mm19_mother.Position 11.53 3.75 141.97
+m3_6mm19_mother.Rotation 0 45 0
+
+Volume m3_6mm20_mother
+m3_6mm20_mother.Virtual true
+m3_6mm20_mother.Material Vacuum
+m3_6mm20_mother.Visibility 0   
+m3_6mm20_mother.Shape BRIK 50. 50. 50
+m3_6mm20_mother.Mother WorldVolume    
+m3_6mm20_mother.Position 11.53 -58.25 141.97
+m3_6mm20_mother.Rotation 0 45 0
+
+Volume m3_6mm21_mother
+m3_6mm21_mother.Virtual true
+m3_6mm21_mother.Material Vacuum
+m3_6mm21_mother.Visibility 0   
+m3_6mm21_mother.Shape BRIK 50. 50. 50
+m3_6mm21_mother.Mother WorldVolume    
+m3_6mm21_mother.Position 46.88 3.75 106.62
+m3_6mm21_mother.Rotation 0 45 0
+
+Volume m3_6mm22_mother
+m3_6mm22_mother.Virtual true
+m3_6mm22_mother.Material Vacuum
+m3_6mm22_mother.Visibility 0   
+m3_6mm22_mother.Shape BRIK 50. 50. 50
+m3_6mm22_mother.Mother WorldVolume    
+m3_6mm22_mother.Position 46.88 -58.25 106.62
+m3_6mm22_mother.Rotation 0 45 0
+
+Volume m3_6mm23_mother
+m3_6mm23_mother.Virtual true
+m3_6mm23_mother.Material Vacuum
+m3_6mm23_mother.Visibility 0   
+m3_6mm23_mother.Shape BRIK 50. 50. 50
+m3_6mm23_mother.Mother WorldVolume    
+m3_6mm23_mother.Position 21.43 -58.25 116.52
+m3_6mm23_mother.Rotation 0 -135 0
+
+Volume m3_6mm24_mother
+m3_6mm24_mother.Virtual true
+m3_6mm24_mother.Material Vacuum
+m3_6mm24_mother.Visibility 0   
+m3_6mm24_mother.Shape BRIK 50. 50. 50
+m3_6mm24_mother.Mother WorldVolume    
+m3_6mm24_mother.Position 21.43 3.75 116.52
+m3_6mm24_mother.Rotation 0 -135 0
+
+Volume m3_6mm25_mother
+m3_6mm25_mother.Virtual true
+m3_6mm25_mother.Material Vacuum
+m3_6mm25_mother.Visibility 0   
+m3_6mm25_mother.Shape BRIK 50. 50. 50
+m3_6mm25_mother.Mother WorldVolume    
+m3_6mm25_mother.Position -41.51 -58.25 106.62
+m3_6mm25_mother.Rotation 0 -45 0
+
+Volume m3_6mm26_mother
+m3_6mm26_mother.Virtual true
+m3_6mm26_mother.Material Vacuum
+m3_6mm26_mother.Visibility 0   
+m3_6mm26_mother.Shape BRIK 50. 50. 50
+m3_6mm26_mother.Mother WorldVolume    
+m3_6mm26_mother.Position -6.15 3.75 141.97
+m3_6mm26_mother.Rotation 0 -45 0
+
+Volume m3_6mm27_mother
+m3_6mm27_mother.Virtual true
+m3_6mm27_mother.Material Vacuum
+m3_6mm27_mother.Visibility 0   
+m3_6mm27_mother.Shape BRIK 50. 50. 50
+m3_6mm27_mother.Mother WorldVolume    
+m3_6mm27_mother.Position -41.51 3.75 106.62
+m3_6mm27_mother.Rotation 0 -45 0
+
+Volume m3_6mm28_mother
+m3_6mm28_mother.Virtual true
+m3_6mm28_mother.Material Vacuum
+m3_6mm28_mother.Visibility 0   
+m3_6mm28_mother.Shape BRIK 50. 50. 50
+m3_6mm28_mother.Mother WorldVolume    
+m3_6mm28_mother.Position -6.15 -58.25 141.97
+m3_6mm28_mother.Rotation 0 -45 0
+
+Volume m3_6mm29_mother
+m3_6mm29_mother.Virtual true
+m3_6mm29_mother.Material Vacuum
+m3_6mm29_mother.Visibility 0   
+m3_6mm29_mother.Shape BRIK 50. 50. 50
+m3_6mm29_mother.Mother WorldVolume    
+m3_6mm29_mother.Position -16.05 3.75 116.52
+m3_6mm29_mother.Rotation 0 135 0
+
+Volume m3_6mm30_mother
+m3_6mm30_mother.Virtual true
+m3_6mm30_mother.Material Vacuum
+m3_6mm30_mother.Visibility 0   
+m3_6mm30_mother.Shape BRIK 50. 50. 50
+m3_6mm30_mother.Mother WorldVolume    
+m3_6mm30_mother.Position -16.05 -58.25 116.52
+m3_6mm30_mother.Rotation 0 135 0

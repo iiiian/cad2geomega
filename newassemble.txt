@@ -1,0 +1,96 @@
+wall1.Mother wall
+wall1.Position 30.69 -27.25 71.5
+wall2.Mother wall
+wall2.Position -25.31 -27.25 71.5
+sensorcover1.Mother sensorcover
+sensorcover1.Position 24.96 -27.25 120.05
+sensorcover2.Mother sensorcover
+sensorcover2.Position -19.59 -27.25 120.05
+sensorcover3.Mother sensorcover
+sensorcover3.Position 2.96 -65.25 100.5
+sensorcover4.Mother sensorcover
+sensorcover4.Position 2.69 10.75 100.5
+frameupper1.Mother frameupper
+frameupper1.Position 2.69 3.75 128.5
+frameupper2.Mother frameupper
+frameupper2.Position 2.69 -58.25 128.5
+sensorbacksupport1.Mother sensorbacksupport
+sensorbacksupport1.Position 2.69 5.75 100.5
+sensorbacksupport2.Mother sensorbacksupport
+sensorbacksupport2.Position 21.43 -27.25 116.52
+sensorbacksupport3.Mother sensorbacksupport
+sensorbacksupport3.Position -16.05 -27.25 116.52
+sensorbacksupport4.Mother sensorbacksupport
+sensorbacksupport4.Position 2.69 -60.25 100.5
+sheetupright1.Mother sheetupright
+sheetupright1.Position 30.69 10.25 100.5
+sheetupright2.Mother sheetupright
+sheetupright2.Position 30.69 -64.75 100.5
+sheetupright3.Mother sheetupright
+sheetupright3.Position -25.31 10.25 100.5
+sheetupright4.Mother sheetupright
+sheetupright4.Position -25.31 -64.75 100.5
+mm1.Mother mm
+mm1.Position 44.19 -66.75 80.5
+mm2.Mother mm
+mm2.Position -38.81 -66.75 80.5
+mm3.Mother mm
+mm3.Position 44.19 12.25 80.5
+mm4.Mother mm
+mm4.Position -38.81 12.25 80.5
+m3_6mm5.Mother m3_6mm
+m3_6mm5.Position 27.69 -2.75 83.85
+m3_6mm6.Mother m3_6mm
+m3_6mm6.Position 27.69 -51.75 83.85
+m3_6mm7.Mother m3_6mm
+m3_6mm7.Position -22.31 -2.75 83.85
+m3_6mm8.Mother m3_6mm
+m3_6mm8.Position -22.31 -51.75 83.85
+m3_6mm9.Mother m3_6mm
+m3_6mm9.Position -28.31 3.75 135.5
+m3_6mm11.Mother m3_6mm
+m3_6mm11.Position 33.69 3.75 135.5
+m3_6mm12.Mother m3_6mm
+m3_6mm12.Position 33.69 -58.25 135.5
+m3_6mm14.Mother m3_6mm
+m3_6mm14.Position 33.69 16.75 75.5
+m3_6mm15.Mother m3_6mm
+m3_6mm15.Position -28.31 16.75 75.5
+m3_6mm16.Mother m3_6mm
+m3_6mm16.Position -28.31 16.75 125.5
+m3_6mm17.Mother m3_6mm
+m3_6mm17.Position 33.69 16.75 100.5
+m3_6mm18.Mother m3_6mm
+m3_6mm18.Position -28.31 16.75 100.5
+m3_6mm31.Mother m3_6mm
+m3_6mm31.Position 33.69 -71.25 125.5
+m3_6mm32.Mother m3_6mm
+m3_6mm32.Position 33.69 -71.25 75.5
+m3_6mm33.Mother m3_6mm
+m3_6mm33.Position -28.31 -71.25 125.5
+m3_6mm34.Mother m3_6mm
+m3_6mm34.Position -28.31 -71.25 75.5
+m3_6mm35.Mother m3_6mm
+m3_6mm35.Position -28.31 -71.25 100.5
+m3_6mm36.Mother m3_6mm
+m3_6mm36.Position 33.69 -71.25 100.5
+m3_6mm19.Mother m3_6mm
+m3_6mm19.Position 11.53 3.75 141.97
+m3_6mm21.Mother m3_6mm
+m3_6mm21.Position 46.88 3.75 106.62
+m3_6mm22.Mother m3_6mm
+m3_6mm22.Position 46.88 -58.25 106.62
+m3_6mm23.Mother m3_6mm
+m3_6mm23.Position 21.43 -58.25 116.52
+m3_6mm24.Mother m3_6mm
+m3_6mm24.Position 21.43 3.75 116.52
+m3_6mm25.Mother m3_6mm
+m3_6mm25.Position -41.51 -58.25 106.62
+m3_6mm26.Mother m3_6mm
+m3_6mm26.Position -6.15 3.75 141.97
+m3_6mm27.Mother m3_6mm
+m3_6mm27.Position -41.51 3.75 106.62
+m3_6mm28.Mother m3_6mm
+m3_6mm28.Position -6.15 -58.25 141.97
+m3_6mm29.Mother m3_6mm
+m3_6mm29.Position -16.05 3.75 116.52
