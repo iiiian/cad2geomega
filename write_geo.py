@@ -1,6 +1,19 @@
 import re
 import numpy as np 
 from write_geo_func import *
+import os
+
+
+def app(bo, mid, orientation,shape_n,sub_real,sub_real_name,sub_void,sub_void_name):
+    if bo==1:
+        sub_real.append([mid, orientation])
+        sub_real_name.append(shape_n)
+    elif bo==0:
+        sub_void.append([mid, orientation])
+        sub_void_name.append(shape_n)
+    
+    ans=[sub_real,sub_real_name,sub_void,sub_void_name]
+    return ans
 
 
 def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_file):
@@ -8,6 +21,9 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
     sub_real_name=[]   
     sub_void=[]
     sub_void_name=[]
+    #check if .geo exist
+    if os.path.isfile(file_out):
+        os.remove(file_out)
     with open(file_in,'r') as f_in:
         i=1
         line=f_in.readline()
@@ -17,59 +33,36 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
                 if_match=True
                 shape_n=v_name+"_subshape"+str(i)
                 [bo, mid, orientation]=write_box(line, shape_n,file_out)
-                if bo==1:
-                    sub_real.append([mid, orientation])
-                    sub_real_name.append(shape_n)
-                elif bo==0:
-                    sub_void.append([mid, orientation])
-                    sub_void_name.append(shape_n)
-
-            if re.match(r"ptri ",line):
-                if_match=True
-                shape_n=v_name+"_subshape"+str(i)
-                [bo, mid, orientation]=write_ptri(line, shape_n,file_out)
-                if bo==1:
-                    sub_real.append([mid, orientation])
-                    sub_real_name.append(shape_n)
-                elif bo==0:
-                    sub_void.append([mid, orientation])
-                    sub_void_name.append(shape_n)
+                [sub_real,sub_real_name,sub_void,sub_void_name]=app(bo, mid, orientation,shape_n,sub_real,sub_real_name,sub_void,sub_void_name)
+                    
 
             if re.match(r"ztrec",line):
                 if_match=True
                 shape_n=v_name+"_subshape"+str(i)
-                [bo, mid, orientation]=write_ztbox(line, shape_n,file_out)
-                if bo==1:
-                    sub_real.append([mid, orientation])
-                    sub_real_name.append(shape_n)
-                elif bo==0:
-                    sub_void.append([mid, orientation])
-                    sub_void_name.append(shape_n)
-
+                [bo, mid, orientation]=write_ztrec(line, shape_n,file_out)
+                [sub_real,sub_real_name,sub_void,sub_void_name]=app(bo, mid, orientation,shape_n,sub_real,sub_real_name,sub_void,sub_void_name)
 
             
             if re.match(r"cyl",line):
                 if_match=True
                 shape_n=v_name+"_subshape"+str(i)
                 [bo, mid, orientation]=write_cyl(line, shape_n,file_out)
-                if bo==1:
-                    sub_real.append([mid, orientation])
-                    sub_real_name.append(shape_n)
-                elif bo==0:
-                    sub_void.append([mid, orientation])
-                    sub_void_name.append(shape_n)
+                [sub_real,sub_real_name,sub_void,sub_void_name]=app(bo, mid, orientation,shape_n,sub_real,sub_real_name,sub_void,sub_void_name)
 
 
-            if re.match(r"ptri2",line):
+            if re.match(r"acyl",line):
                 if_match=True
                 shape_n=v_name+"_subshape"+str(i)
-                [bo, mid, orientation]=write_ptri2(line, shape_n,file_out)
-                if bo==1:
-                    sub_real.append([mid, orientation])
-                    sub_real_name.append(shape_n)
-                elif bo==0:
-                    sub_void.append([mid, orientation])
-                    sub_void_name.append(shape_n)
+                [bo, mid, orientation]=write_acyl(line, shape_n,file_out)
+                [sub_real,sub_real_name,sub_void,sub_void_name]=app(bo, mid, orientation,shape_n,sub_real,sub_real_name,sub_void,sub_void_name)
+
+
+            if re.match(r"trd1",line):
+                if_match=True
+                shape_n=v_name+"_subshape"+str(i)
+                [bo, mid, orientation]=write_trd1(line, shape_n,file_out)
+                [sub_real,sub_real_name,sub_void,sub_void_name]=app(bo, mid, orientation,shape_n,sub_real,sub_real_name,sub_void,sub_void_name)
+
 
             line=f_in.readline()
             if if_match:

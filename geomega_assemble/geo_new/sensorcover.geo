@@ -1,0 +1,163 @@
+Shape Box sensorcover_subshape1
+sensorcover_subshape1.Parameters 28.0 5.0 28.0
+
+Shape Box sensorcover_subshape2
+sensorcover_subshape2.Parameters 26.0 4.5 26.0
+
+Shape Box sensorcover_subshape3
+sensorcover_subshape3.Parameters 3.0 1.5 3.0
+
+Shape Box sensorcover_subshape4
+sensorcover_subshape4.Parameters 3.0 1.5 3.0
+
+Shape Box sensorcover_subshape5
+sensorcover_subshape5.Parameters 3.0 1.5 3.0
+
+Shape Box sensorcover_subshape6
+sensorcover_subshape6.Parameters 3.0 1.5 3.0
+
+Shape Box sensorcover_subshape7
+sensorcover_subshape7.Parameters 3.0 1.5 3.0
+
+Shape Box sensorcover_subshape8
+sensorcover_subshape8.Parameters 3.0 1.5 3.0
+
+Shape TUBE sensorcover_subshape9
+sensorcover_subshape9.Parameters 0 1.5 1.5001 0 360
+
+Shape TUBE sensorcover_subshape10
+sensorcover_subshape10.Parameters 0 1.5 1.5001 0 360
+
+Shape TUBE sensorcover_subshape11
+sensorcover_subshape11.Parameters 0 1.5 1.5001 0 360
+
+Shape TUBE sensorcover_subshape12
+sensorcover_subshape12.Parameters 0 1.5 1.5001 0 360
+
+Shape TUBE sensorcover_subshape13
+sensorcover_subshape13.Parameters 0 1.5 1.5001 0 360
+
+Shape TUBE sensorcover_subshape14
+sensorcover_subshape14.Parameters 0 1.5 1.5001 0 360
+
+Include Materials.geo
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape3
+sensorcover_subshape1_to_sensorcover_subshape3.Position 31.0 -3.5 25.0
+sensorcover_subshape1_to_sensorcover_subshape3.Rotation 0 0 0
+
+Shape Union sensorcover_subshape15
+sensorcover_subshape15.Parameters sensorcover_subshape1 sensorcover_subshape3 sensorcover_subshape1_to_sensorcover_subshape3
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape4
+sensorcover_subshape1_to_sensorcover_subshape4.Position 31.0 -3.5 0.0
+sensorcover_subshape1_to_sensorcover_subshape4.Rotation 0 0 0
+
+Shape Union sensorcover_subshape16
+sensorcover_subshape16.Parameters sensorcover_subshape15 sensorcover_subshape4 sensorcover_subshape1_to_sensorcover_subshape4
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape5
+sensorcover_subshape1_to_sensorcover_subshape5.Position 31.0 -3.5 -25.0
+sensorcover_subshape1_to_sensorcover_subshape5.Rotation 0 0 0
+
+Shape Union sensorcover_subshape17
+sensorcover_subshape17.Parameters sensorcover_subshape16 sensorcover_subshape5 sensorcover_subshape1_to_sensorcover_subshape5
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape6
+sensorcover_subshape1_to_sensorcover_subshape6.Position -31.0 -3.5 25.0
+sensorcover_subshape1_to_sensorcover_subshape6.Rotation 0 0 0
+
+Shape Union sensorcover_subshape18
+sensorcover_subshape18.Parameters sensorcover_subshape17 sensorcover_subshape6 sensorcover_subshape1_to_sensorcover_subshape6
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape7
+sensorcover_subshape1_to_sensorcover_subshape7.Position -31.0 -3.5 0.0
+sensorcover_subshape1_to_sensorcover_subshape7.Rotation 0 0 0
+
+Shape Union sensorcover_subshape19
+sensorcover_subshape19.Parameters sensorcover_subshape18 sensorcover_subshape7 sensorcover_subshape1_to_sensorcover_subshape7
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape8
+sensorcover_subshape1_to_sensorcover_subshape8.Position -31.0 -3.5 -25.0
+sensorcover_subshape1_to_sensorcover_subshape8.Rotation 0 0 0
+
+Shape Union sensorcover_subshape20
+sensorcover_subshape20.Parameters sensorcover_subshape19 sensorcover_subshape8 sensorcover_subshape1_to_sensorcover_subshape8
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape2
+sensorcover_subshape1_to_sensorcover_subshape2.Rotation 0 0 0
+sensorcover_subshape1_to_sensorcover_subshape2.Position 0.0 -0.5 0.0
+
+Shape Subtraction sensorcover_subshape21
+sensorcover_subshape21.Parameters sensorcover_subshape20 sensorcover_subshape2 sensorcover_subshape1_to_sensorcover_subshape2
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape9
+sensorcover_subshape1_to_sensorcover_subshape9.Rotation 0 90.0 -90.0
+sensorcover_subshape1_to_sensorcover_subshape9.Position 31.0 -3.5 25.0
+
+Shape Subtraction sensorcover_subshape22
+sensorcover_subshape22.Parameters sensorcover_subshape21 sensorcover_subshape9 sensorcover_subshape1_to_sensorcover_subshape9
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape10
+sensorcover_subshape1_to_sensorcover_subshape10.Rotation 0 90.0 -90.0
+sensorcover_subshape1_to_sensorcover_subshape10.Position 31.0 -3.5 0.0
+
+Shape Subtraction sensorcover_subshape23
+sensorcover_subshape23.Parameters sensorcover_subshape22 sensorcover_subshape10 sensorcover_subshape1_to_sensorcover_subshape10
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape11
+sensorcover_subshape1_to_sensorcover_subshape11.Rotation 0 90.0 -90.0
+sensorcover_subshape1_to_sensorcover_subshape11.Position 31.0 -3.5 -25.0
+
+Shape Subtraction sensorcover_subshape24
+sensorcover_subshape24.Parameters sensorcover_subshape23 sensorcover_subshape11 sensorcover_subshape1_to_sensorcover_subshape11
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape12
+sensorcover_subshape1_to_sensorcover_subshape12.Rotation 0 90.0 -90.0
+sensorcover_subshape1_to_sensorcover_subshape12.Position -31.0 -3.5 25.0
+
+Shape Subtraction sensorcover_subshape25
+sensorcover_subshape25.Parameters sensorcover_subshape24 sensorcover_subshape12 sensorcover_subshape1_to_sensorcover_subshape12
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape13
+sensorcover_subshape1_to_sensorcover_subshape13.Rotation 0 90.0 -90.0
+sensorcover_subshape1_to_sensorcover_subshape13.Position -31.0 -3.5 0.0
+
+Shape Subtraction sensorcover_subshape26
+sensorcover_subshape26.Parameters sensorcover_subshape25 sensorcover_subshape13 sensorcover_subshape1_to_sensorcover_subshape13
+
+Orientation sensorcover_subshape1_to_sensorcover_subshape14
+sensorcover_subshape1_to_sensorcover_subshape14.Rotation 0 90.0 -90.0
+sensorcover_subshape1_to_sensorcover_subshape14.Position -31.0 -3.5 -25.0
+
+Shape Subtraction sensorcover_subshape27
+sensorcover_subshape27.Parameters sensorcover_subshape26 sensorcover_subshape14 sensorcover_subshape1_to_sensorcover_subshape14
+
+
+Volume sensorcover
+sensorcover.Material Aluminium
+sensorcover.Shape sensorcover_subshape27
+sensorcover.Copy sensorcover1
+sensorcover.Copy sensorcover2
+sensorcover.Copy sensorcover3
+sensorcover.Copy sensorcover4
+
+sensorcover1.Mother WorldVolume
+sensorcover1.Color 2
+sensorcover1.Position {24.96+3.5355339059327378} {-27.25+2.1648901405887336e-16} {120.05+3.5355339059327373}
+sensorcover1.Rotation 45.0 0.0 -90.0
+
+sensorcover2.Mother WorldVolume
+sensorcover2.Color 2
+sensorcover2.Position {-19.59+-3.5355339059327378} {-27.25+2.1648901405887336e-16} {120.05+3.5355339059327373}
+sensorcover2.Rotation 45.0 0.0 90.0
+
+sensorcover3.Mother WorldVolume
+sensorcover3.Color 2
+sensorcover3.Position {2.69+0.0} {-65.25+-5.0} {100.5+6.123233995736766e-16}
+sensorcover3.Rotation 180.0 0.0 0.0
+
+sensorcover4.Mother WorldVolume
+sensorcover4.Color 2
+sensorcover4.Position {2.69+0.0} {10.75+5.0} {100.5+0.0}
+sensorcover4.Rotation 0.0 0.0 0.0

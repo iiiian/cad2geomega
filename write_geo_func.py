@@ -8,9 +8,15 @@ def write_box(line,shape_name,geofile):
     mid=(p1+p2)/2
     vec=p1-p2
     bo=float(a[0][0])
-    x_h=abs(vec[0])/2
-    y_h=abs(vec[1])/2
-    z_h=abs(vec[2])/2
+    
+    if bo==0:
+        x_h=abs(vec[0])/2+0.01
+        y_h=abs(vec[1])/2+0.01
+        z_h=abs(vec[2])/2+0.01
+    else:
+        x_h=abs(vec[0])/2
+        y_h=abs(vec[1])/2
+        z_h=abs(vec[2])/2
     with open(geofile,'a') as geo:
         geo.write('Shape Box '+shape_name)
         geo.write('\n')
@@ -58,18 +64,20 @@ def write_ptri(line,shape_name,geofile):
     c=np.array([float(p[0][7]),float(p[0][8]),float(p[0][9])])
     d=np.array([float(p[0][10]),float(p[0][11]),float(p[0][12])])
     with open(geofile,'a') as geo:
-        sub1_name=shape_name+'_sub1'
+        sub1_name=shape_name
         geo.write('Shape TRD1 '+sub1_name)
         geo.write('\n')
         geo.write(sub1_name+'.Parameters '+str(di(a,b)+0.5)+' '+str(0.5)+' '+str(di(d,c)/2)+' '+str(di(c,a)/2))
         geo.write('\n')
         geo.write('\n')
+        """
         sub2_name=shape_name+'_sub2'
         geo.write('Shape BOX '+sub2_name)
         geo.write('\n')
         geo.write(sub2_name+'.Parameters '+str((di(a,b)+1)/2)+' '+str(di(d,c)/2)+' '+str(di(c,a)/2))
         geo.write('\n')
         geo.write('\n')
+
         #write orientation
         o_name=sub1_name+'_to_'+sub2_name
         geo.write('Orientation '+o_name)
@@ -83,6 +91,7 @@ def write_ptri(line,shape_name,geofile):
         geo.write(shape_name+'.Parameters '+sub1_name+' '+sub2_name+' '+o_name)
         geo.write('\n')
         geo.write('\n')
+        """
 
         bo=float(p[0][0])
         mid=0.5*(a+d)-0.5*nor(b-a)
@@ -107,63 +116,36 @@ def write_ptri(line,shape_name,geofile):
         return ans
 
 
-def write_ptri2(line,shape_name,geofile):
-    print(line)
-    p=re.findall(r"ptri2 ([0-1]) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)",line)
-    mid=np.array([float(p[0][1]),float(p[0][2]),float(p[0][3])])
-    leng=np.array([float(p[0][4]),float(p[0][5]),float(p[0][6])])
-    orientation=np.array([float(p[0][7]),float(p[0][8]),float(p[0][9])])
+def write_trd1(line,shape_name,geofile):
+    p=re.findall(r"trd1 ([0-1]) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)",line)
+    par=np.array([float(p[0][1]),float(p[0][2]),float(p[0][3]),float(p[0][4])])
+    pos=np.array([float(p[0][5]),float(p[0][6]),float(p[0][7])])
+    rot=np.array([float(p[0][8]),float(p[0][9]),float(p[0][10])])
+    bo=float(p[0][0])
     with open(geofile,'a') as geo:
-        sub1_name=shape_name+'_sub1'
-        geo.write('Shape TRD1 '+sub1_name)
+        geo.write('Shape TRD1 '+shape_name)
         geo.write('\n')
-        geo.write(sub1_name+'.Parameters '+str(leng[0]+0.5)+' '+str(0.5)+' '+str(leng[1]/2)+' '+str(leng[2]/2))
-        geo.write('\n')
-        geo.write('\n')
-        sub2_name=shape_name+'_sub2'
-        geo.write('Shape BOX '+sub2_name)
-        geo.write('\n')
-        geo.write(sub2_name+'.Parameters '+str((leng[0]+1)/2)+' '+str(leng[1]/2)+' '+str(leng[2]/2))
+        geo.write(shape_name+'.Parameters '+str(par[0])+' '+str(par[1])+' '+str(par[2])+' '+str(par[3]))
         geo.write('\n')
         geo.write('\n')
-        #write orientation
-        o_name=sub1_name+'_to_'+sub2_name
-        geo.write('Orientation '+o_name)
-        geo.write('\n')
-        geo.write(o_name+'.Position '+str(leng[0]/2)+' 0 0')
-        geo.write('\n')
-        geo.write('\n')
-        #subtract
-        geo.write('Shape Subtraction '+shape_name)
-        geo.write('\n')
-        geo.write(shape_name+'.Parameters '+sub1_name+' '+sub2_name+' '+o_name)
-        geo.write('\n')
-        geo.write('\n')
-
-        bo=float(p[0][0])
-        ans=[bo,mid,orientation]
-        return ans
+    ans=[bo,pos,rot]
+    return ans
 
 
-def write_ztbox(line,shape_name,geofile):
+def write_ztrec(line,shape_name,geofile):
     a=re.findall(r"ztrec ([0-1]) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)",line)
-    p1=np.array([float(a[0][1]),float(a[0][2]),float(a[0][3])])
-    p2=np.array([float(a[0][4]),float(a[0][5]),float(a[0][6])])
-    mid=(p1+p2)/2
-    vec=p1-p2
     bo=float(a[0][0])
-    x_h=abs(vec[0])/2
-    y_h=abs(vec[1])/2
-    z_h=abs(vec[2])/2
+    half_h=np.array([float(a[0][1]),float(a[0][2]),float(a[0][3])])
+    pos=np.array([float(a[0][4]),float(a[0][5]),float(a[0][6])])
+    rot=np.array([float(a[0][7]),float(a[0][8]),float(a[0][9])])
     with open(geofile,'a') as geo:
         geo.write('Shape Box '+shape_name)
         geo.write('\n')
-        geo.write(shape_name+'.Parameters '+str(x_h)+' '+str(y_h)+' '+str(z_h))
+        geo.write(shape_name+'.Parameters '+str(half_h[0])+' '+str(half_h[1])+' '+str(half_h[2]))
         geo.write('\n')
         geo.write('\n')
-    
-    orientation=np.array([float(a[0][7]),float(a[0][8]),float(a[0][9])])
-    ans=[bo,mid,orientation]
+    orientation=rot
+    ans=[bo,pos,orientation]
     return ans
 
 
@@ -175,7 +157,7 @@ def write_cyl(line,shape_name,geofile):
     mid=(a+c)/2
     bo=float(p[0][0])
     r=di(a,b)/2
-    z_h=di(b,c)/2+0.0001
+    z_h=di(b,c)/2+0.001
     with open(geofile,'a') as geo:
         geo.write('Shape TUBE '+shape_name)
         geo.write('\n')
@@ -197,3 +179,22 @@ def write_cyl(line,shape_name,geofile):
     orientation=[0,theta,phi]
     ans=[bo,mid,orientation]
     return ans
+
+
+def write_acyl(line,shape_name,geofile):
+    p=re.findall(r"cyl ([0-1]) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)",line)
+    a=np.array([float(p[0][1]),float(p[0][2]),float(p[0][3]),float(p[0][4]),float(p[0][5])])
+    pos=np.array([float(p[0][6]),float(p[0][7]),float(p[0][8])])
+    rot=np.array([float(p[0][9]),float(p[0][10]),float(p[0][11])])
+    bo=float(p[0][0])
+    with open(geofile,'a') as geo:
+        geo.write('Shape TUBE '+shape_name)
+        geo.write('\n')
+        geo.write(shape_name+'.Parameters '+str(a[0])+' '+str(a[1])+' '+str(a[2])+' '+str(a[3])+' '+str(a[4]))
+        geo.write('\n')
+        geo.write('\n')
+    
+    ans=[bo,pos,rot]
+    return ans
+
+
