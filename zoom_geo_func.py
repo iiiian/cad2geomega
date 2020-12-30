@@ -7,6 +7,7 @@ def zoom_shape(file_in, file_out, zoom_rate):
     match_box=False
     match_tube=False
     match_trd1=False
+    match_vol=False
 
     o_file = open(file_in, 'r')
     n_file = open(file_out, 'w')
@@ -24,6 +25,8 @@ def zoom_shape(file_in, file_out, zoom_rate):
             match_trd1=True
         if re.findall(r'Orientation',line):
             match_o=True
+        if re.findall(r'Volume',line):
+            match_vol=True
 
         # zoom shape box
         m1 = re.findall(r'(.+)Parameters (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)', line)
@@ -58,6 +61,13 @@ def zoom_shape(file_in, file_out, zoom_rate):
             z = zoom_rate*float(m4[0][3])
             n_line = m4[0][0]+'Position '+str(x)+' '+str(y)+' '+str(z)+'\n'
             match_o = False
+        # zoom volume position
+        m5 = re.findall(r'(.+)Position (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*) (-?[0-9]+\.*[0-9]*)', line)
+        if match_vol and m5:
+            x = zoom_rate*float(m5[0][1])
+            y = zoom_rate*float(m5[0][2])
+            z = zoom_rate*float(m5[0][3])
+            n_line = m5[0][0]+'Position '+str(x)+' '+str(y)+' '+str(z)+'\n'
 
         # write new file
         n_file.write(n_line)

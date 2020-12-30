@@ -1,0 +1,120 @@
+Shape TUBE telescope_subshape1
+telescope_subshape1.Parameters 0 256.0 435.718 0 360
+
+Shape TUBE telescope_subshape2
+telescope_subshape2.Parameters 0 248.0 435.719 0 360
+
+Shape TUBE telescope_subshape3
+telescope_subshape3.Parameters 0 292.8516 50.0 0 360
+
+Shape TUBE telescope_subshape4
+telescope_subshape4.Parameters 0 292.8516 50.0 0 360
+
+Shape Box telescope_subshape5
+telescope_subshape5.Parameters 436.0 107.4205 45.00000000000003
+
+Shape TRD1 telescope_subshape6
+telescope_subshape6.Parameters 357.5 436.0 78.5 90.0
+
+Shape Box telescope_subshape7
+telescope_subshape7.Parameters 105.0 180.0 50.0
+
+Shape Box telescope_subshape8
+telescope_subshape8.Parameters 46.0 180.0 85.0
+
+Shape Box telescope_subshape9
+telescope_subshape9.Parameters 180.0 120.0 50.0
+
+Shape Box telescope_subshape10
+telescope_subshape10.Parameters 120.0 120.0 70.0
+
+Shape Box telescope_subshape11
+telescope_subshape11.Parameters 75.47309999999999 30.0 15.0
+
+Shape Box telescope_subshape12
+telescope_subshape12.Parameters 75.47309999999999 30.0 15.0
+
+Include Materials.geo
+
+Orientation telescope_subshape1_to_telescope_subshape3
+telescope_subshape1_to_telescope_subshape3.Position 0.0 0.0 385.7180000000001
+telescope_subshape1_to_telescope_subshape3.Rotation 0 180.0 90.0
+
+Shape Union telescope_subshape13
+telescope_subshape13.Parameters telescope_subshape1 telescope_subshape3 telescope_subshape1_to_telescope_subshape3
+
+Orientation telescope_subshape1_to_telescope_subshape4
+telescope_subshape1_to_telescope_subshape4.Position 0.0 0.0 -385.71799999999996
+telescope_subshape1_to_telescope_subshape4.Rotation 0 180.0 90.0
+
+Shape Union telescope_subshape14
+telescope_subshape14.Parameters telescope_subshape13 telescope_subshape4 telescope_subshape1_to_telescope_subshape4
+
+Orientation telescope_subshape1_to_telescope_subshape5
+telescope_subshape1_to_telescope_subshape5.Position 0.0 -250.0795 -480.71799999999996
+telescope_subshape1_to_telescope_subshape5.Rotation 0 0 0
+
+Shape Union telescope_subshape15
+telescope_subshape15.Parameters telescope_subshape14 telescope_subshape5 telescope_subshape1_to_telescope_subshape5
+
+Orientation telescope_subshape1_to_telescope_subshape6
+telescope_subshape1_to_telescope_subshape6.Position 0.0 -396.75 -480.71799999999996
+telescope_subshape1_to_telescope_subshape6.Rotation 90.0 0.0 0.0
+
+Shape Union telescope_subshape16
+telescope_subshape16.Parameters telescope_subshape15 telescope_subshape6 telescope_subshape1_to_telescope_subshape6
+
+Orientation telescope_subshape1_to_telescope_subshape7
+telescope_subshape1_to_telescope_subshape7.Position -180.0 0.0 -576.279
+telescope_subshape1_to_telescope_subshape7.Rotation 0 0 0
+
+Shape Union telescope_subshape17
+telescope_subshape17.Parameters telescope_subshape16 telescope_subshape7 telescope_subshape1_to_telescope_subshape7
+
+Orientation telescope_subshape1_to_telescope_subshape8
+telescope_subshape1_to_telescope_subshape8.Position -121.0 0.0 -711.279
+telescope_subshape1_to_telescope_subshape8.Rotation 0 0 0
+
+Shape Union telescope_subshape18
+telescope_subshape18.Parameters telescope_subshape17 telescope_subshape8 telescope_subshape1_to_telescope_subshape8
+
+Orientation telescope_subshape1_to_telescope_subshape9
+telescope_subshape1_to_telescope_subshape9.Position 105.0 0.0 -576.279
+telescope_subshape1_to_telescope_subshape9.Rotation 0 0 0
+
+Shape Union telescope_subshape19
+telescope_subshape19.Parameters telescope_subshape18 telescope_subshape9 telescope_subshape1_to_telescope_subshape9
+
+Orientation telescope_subshape1_to_telescope_subshape10
+telescope_subshape1_to_telescope_subshape10.Position 45.0 0.0 -696.279
+telescope_subshape1_to_telescope_subshape10.Rotation 0 0 0
+
+Shape Union telescope_subshape20
+telescope_subshape20.Parameters telescope_subshape19 telescope_subshape10 telescope_subshape1_to_telescope_subshape10
+
+Orientation telescope_subshape1_to_telescope_subshape11
+telescope_subshape1_to_telescope_subshape11.Position 0.8564000000000007 150.0 -751.279
+telescope_subshape1_to_telescope_subshape11.Rotation 0 0 0
+
+Shape Union telescope_subshape21
+telescope_subshape21.Parameters telescope_subshape20 telescope_subshape11 telescope_subshape1_to_telescope_subshape11
+
+Orientation telescope_subshape1_to_telescope_subshape12
+telescope_subshape1_to_telescope_subshape12.Position 0.8564000000000007 -150.0 -751.279
+telescope_subshape1_to_telescope_subshape12.Rotation 0 0 0
+
+Shape Union telescope_subshape22
+telescope_subshape22.Parameters telescope_subshape21 telescope_subshape12 telescope_subshape1_to_telescope_subshape12
+
+Orientation telescope_subshape1_to_telescope_subshape2
+telescope_subshape1_to_telescope_subshape2.Rotation 0 180.0 90.0
+telescope_subshape1_to_telescope_subshape2.Position 0.0 0.0 0.0
+
+Shape Subtraction telescope_subshape23
+telescope_subshape23.Parameters telescope_subshape22 telescope_subshape2 telescope_subshape1_to_telescope_subshape2
+
+Volume telescope
+telescope.Mother WorldVolume
+telescope.Material Aluminium
+telescope.Shape telescope_subshape23
+telescope.Position 0.0 0.0 1009.192

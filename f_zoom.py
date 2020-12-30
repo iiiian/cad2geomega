@@ -1,22 +1,11 @@
 from zoom_geo_func import zoom_shape
 
 file_list=[
-'wall.geo',
-'sensorcover.geo',
-'basebeamupper.geo',
-'frameupper.geo',
-'sensorbacksupport.geo',
-'sheetleft.geo',
-'sheetback.geo',
-'pcbconnector.geo',
-'sheetfront.geo',
-'sheetup.geo',
-'m6_10mm.geo',
-'m3_6mm.geo'
+'tele_support_small.geo'
 ]
 
-dir_in='/home/ian/Documents/GTM massmodel/geo_10x/'
-dir_out='/home/ian/Documents/GTM massmodel/geo_new/'
+dir_in='/home/ian/Documents/GTM massmodel/bus/'
+dir_out='/home/ian/Documents/GTM massmodel/bus_0.1x/'
 
 for i in file_list:
     fin=dir_in+i

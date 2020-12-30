@@ -29,28 +29,11 @@ def nor(a):
     return ans
 
 
-a=np.array([9.681981, 3, -4.146447])
-b=np.array([8.171573, 3, 0])
-c=np.array([2.12132, 3, -11.70711])
+a=np.array([393.214, -414.428, 0])
+b=np.array([414.428, -435.641, 0])
 l=di(a,b)
-ac=c-a
-ab=b-a
-mx=np.array([-1,0,0])
-print(di(a,b))
-print('theta')
-print(r2d(np.arccos(ac[0]/di(a,c))))    #theta
-print(r2d(np.arccos(np.dot(ac,ab)/di(a,c)/di(a,b))))    #a
-alpha=np.arccos(np.dot(ac,ab)/di(a,c)/di(a,b))
-p=b+nor(ac)*(np.sin(alpha-np.pi/2)*l)
-mid=0.5*(a+p)+nor(ac)*0.5
-pa=a-p
-print(p)
-print('x')
-print(di(b,p))
-print('z')
-print(di(a,p))
-print(mid)
-print(r2d(np.arccos(pa[2]/di(p,a))))
-print('-----------------')
-print(di(a,b)**2)
-print(di(a,p)**2+di(b,p)**2)
+print(l/2)
+
+c=np.array([-40,-434.712,506.593])
+d=np.array([-445,435.05,709.974])
+print((c+d)/2)

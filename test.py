@@ -1,5 +1,10 @@
-import re
-
-t='asdasdf aefeas f. .  Box '
-a=re.findall(r'Box',t)
-print(a)
+x1=448
+x2=522
+y1=448
+y2=522
+z=[1002.92,929.846,856.796,783.692,710.615,564.462,491.385,345.231,272.154,199.077,126]
+d=3
+for i in z:
+    for j in [1,-1]:
+        for k in [1,-1]:
+            print('rec 1 '+str(j*x1)+' '+str(k*y1)+' '+str(i)+' '+str(j*x2)+' '+str(k*y2)+' '+str(i-d))
