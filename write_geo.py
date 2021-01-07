@@ -68,7 +68,6 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
 
 
             if re.match(r"trd1",line):
-                print('match trd1')
                 if_match=True
                 shape_n=v_name+"_subshape"+str(i)
                 [bo, mid, orientation]=write_trd1(line, shape_n,file_out)
@@ -166,7 +165,6 @@ def write_all(file_in, file_out, v_name, v_world_volume, v_material, included_fi
 
         #merge sub void last
         if sub_void_last:
-            print(sub_void_last_name)
             for j in range(0, len(sub_void_last)):
                 mid=sub_void_last[j][0]
                 orientation=sub_void_last[j][1]
