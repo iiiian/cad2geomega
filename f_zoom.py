@@ -1,11 +1,11 @@
 from zoom_geo_func import zoom_shape
 
 file_list=[
-'tele_support_small.geo'
+'inner_frame_new.geo'
 ]
 
-dir_in='/home/ian/Documents/GTM massmodel/bus/'
-dir_out='/home/ian/Documents/GTM massmodel/bus_0.1x/'
+dir_in='/home/ian/Documents/bus_0.1x/'
+dir_out='/home/ian/Documents/'
 
 for i in file_list:
     fin=dir_in+i
